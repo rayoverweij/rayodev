@@ -1,4 +1,5 @@
-import './globals.css';
+import './styles/globals.css';
+import { serif } from "./styles/fonts";
 
 
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<html lang="en">
-			<body>
+			<body className={`${serif.className}`}>
 				{ children }
 			</body>
 		</html>
