@@ -26,8 +26,8 @@ h2 {
 	margin-bottom: 0;
 }
 
-p {
-	line-height: 1.3;
+p, li {
+	line-height: 1.4;
 }
 
 small {
@@ -37,7 +37,7 @@ small {
 }
 
 li {
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.75rem;
 	padding-left: 0.75rem;
 }
 
@@ -62,9 +62,14 @@ body {
 	padding: 1.5rem;
 }
 
-#cruzdelrayo {
+#imgcontainer {
 	width: 100%;
 	max-width: 600px;
+	aspect-ratio: 4/3;
+}
+
+#cruzdelrayo {
+	width: 100%;
 	border: 4px solid black;
 	border-radius: 0.5rem;
 }
@@ -118,10 +123,6 @@ footer {
 		min-height: 95vh;
 		max-width: 2000px;
 		margin: 0 auto;
-	}
-
-	#cruzdelrayo {
-		width: 35vw;
 	}
 
 	#textbits {
