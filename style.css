@@ -1,0 +1,142 @@
+:root {
+	font-family: Inter, sans-serif;
+	font-feature-settings: 'calt' 1, 'dlig' 1, 'liga' 1, 'cv05' 1, 'cv08' 1, 'ss01' 1;
+}
+@supports (font-variation-settings: normal) {
+	:root { font-family: InterVariable, sans-serif; }
+}
+
+
+::selection {
+	background-color: black;
+	color: white;
+}
+
+
+h1 {
+	font-size: 2.5rem;
+	margin-top: 4rem;
+	margin-bottom: 0.5rem;
+}
+
+h2 {
+	font-weight: 550;
+	font-size: 1.1rem;
+	margin-top: 3rem;
+	margin-bottom: 0;
+}
+
+p {
+	line-height: 1.3;
+}
+
+small {
+	display: block;
+	font-size: 1rem;
+	margin-bottom: 2rem;
+}
+
+li {
+	margin-bottom: 0.5rem;
+	padding-left: 0.75rem;
+}
+
+a {
+	color: #0000FF;
+	text-decoration: none;
+	border-bottom: 1px solid #0000FF;
+}
+
+a:hover {
+	color: #CC0000;
+	border-bottom-color: #CC0000;
+}
+
+strong {
+	font-weight: 550;
+}
+
+
+body {
+	margin: 0;
+	padding: 2rem;
+}
+
+#cruzdelrayo {
+	width: 100%;
+	max-width: 600px;
+	border: 4px solid black;
+	border-radius: 0.5rem;
+}
+
+#verwijzing {
+	margin-top: 0.5rem;
+	font-size: 0.9rem;
+	color: #666;
+}
+
+#voxsio {
+	list-style-type: "\1FA7A";
+}
+
+#prewired {
+	list-style-type: "\1F4BE";
+}
+
+#aisummit {
+	list-style-type: "\1F916";
+}
+
+#dissertation {
+	list-style-type: "\1F393";
+}
+
+#contact {
+	margin-top: 0.5rem;
+}
+
+footer {
+	margin-top: 5rem;
+	margin-bottom: 4rem;
+	text-align: center;
+	color: #666;
+}
+
+
+@media (min-width: 900px) {
+	h1 {
+		font-size: 3rem;
+		margin-top: 1rem;
+	}
+
+	body {
+		padding: 1rem;
+	}
+
+	#container {
+		display: flex;
+		min-height: 95vh;
+		max-width: 2000px;
+		margin: 0 auto;
+	}
+
+	#cruzdelrayo {
+		width: 35vw;
+	}
+
+	#textbits {
+		max-width: 80ch;
+		margin-left: 5vw;
+	}
+
+	footer {
+		margin-top: 3rem;
+		margin-bottom: 1rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	h1 {
+		font-size: 4rem;
+	}
+}

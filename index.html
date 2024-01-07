@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rayo Verweij's website!</title>
+		<link rel="preconnect" href="https://rsms.me/" />
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" href="/favicon.ico" />
+	</head>
+	<body>
+		<div id="container">
+			<div>
+				<img
+					id="cruzdelrayo"
+					src="./cruzdelrayo.webp"
+					alt="Selfie of Rayo Verweij at a platform of the Cruz del Rayo metro station in Madrid, Spain"
+				/>
+			</div>
+			<div id="textbits">
+				<h1>Hoi!<br />I'm Rayo Verweij :D</h1>
+				<small>&rarr; <em>That's</em> 📢 <em>/rah-yo ver-wai/ and I use he/they pronouns</em></small>
+				<p>One day, I aspire for this website to be a jewel of the internet: a blog burstling with ideas, a portfolio of dozens of unique projects and inspiring talks, something that appears in those content farm "10 cool personal websites you should know about"-posts.</p>
+				<p>Today, this website's main function is to remind the world that the good citizens of Madrid, Spain, named <a href="https://www.openstreetmap.org/node/5307477094" target="_blank" rel="noopener noreferrer">a metro station</a> after me. (It is a common misconception that the Madrid football club Rayo Vallecano was <em>also</em> named after me; this is, sadly, an urban legend.)</p>
+
+				<h2>Verweijzingen</h2>
+				<p id="verwijzing"><strong>ver·'wij·zing</strong> <em>(de, v., mv: -en)</em> "reference".</p>
+				<ul>
+					<li id="voxsio">I'm the chief technology officer of <a href="https://voxsio.com" target="_blank" rel="noopener noreferrer">Voxsio</a> where we build ethical and engaging digital health apps in collaboration with the NHS</li>
+					<li id="prewired">I'm also the treasurer of <a href="https://prewired.org" target="_blank" rel="noopener noreferrer">Prewired</a>, an Edinburgh charity that runs a weekly after-school coding club for young people</li>
+					<li id="aisummit">At the 2023 Scottish AI Summit in Glasgow I hosted a workshop called "Building Inclusive AI: Language, Dialect, and Diversity" that <a href="https://www.scottishaisummit.com/workshop-building-inclusive-ai-language-dialect-and-diversity" target="_blank" rel="noopener noreferrer">you can watch some bits of</a> if you're interested</li>
+					<li id="dissertation">My 2021 MSc dissertation, "An Online Research Environment for Behavioural Studies into Reinforcement Learning", can be read <a href="/docs/Verweij2021-OnlineResearchEnvironment.pdf" target="_blank" rel="noopener noreferrer">here</a></li>
+				</ul>
+
+				<h2>Contact</h2>
+				<p id="contact">rayo [dot] verweij [at] live [dot] nl or <a href="https://linkedin.com/in/rayo-verweij" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+			</div>
+		</div>
+		<footer>
+			&copy; Rayo Verweij <span id="date"></span>.
+		</footer>
+
+		<script>
+			const year = new Date().getFullYear();
+			document.getElementById("date").innerText = year;
+		</script>
+	</body>
+</html>
