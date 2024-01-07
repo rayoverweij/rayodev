@@ -103,7 +103,7 @@ footer {
 }
 
 
-@media (min-width: 900px) {
+@media screen and (min-width: 900px) {
 	h1 {
 		font-size: 3rem;
 		margin-top: 1rem;
@@ -135,7 +135,7 @@ footer {
 	}
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
 	h1 {
 		font-size: 4rem;
 	}
