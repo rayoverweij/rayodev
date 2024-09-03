@@ -78,6 +78,10 @@ strong {
 }
 
 
+html {
+	overflow-x: hidden;
+}
+
 body {
 	margin: 0;
 	padding: 1.5rem;
