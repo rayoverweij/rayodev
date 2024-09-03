@@ -78,13 +78,13 @@ strong {
 }
 
 
-html {
-	overflow-x: hidden;
-}
-
 body {
 	margin: 0;
 	padding: 1.5rem;
+	overflow-x: hidden;
+}
+
+#mobile-wrapper {
 	overflow-x: hidden;
 }
 
@@ -93,7 +93,7 @@ body {
 	width: 1000px;
 	height: 2000px;
 	left: -650px;
-	top: -1100px;
+	top: -1200px;
 	transform: rotate(85deg);
 	background-color: var(--gold);
 	z-index: -100;
@@ -107,6 +107,7 @@ body {
 
 #cruzdelrayo {
 	width: 100%;
+	box-sizing: border-box;
 	border: 4px solid black;
 	border-radius: 0.5rem;
 }
@@ -184,7 +185,7 @@ footer {
 	
 	#imgcontainer {
 		position: sticky;
-		top: 5rem;
+		top: 4rem;
 		align-self: flex-start;
 	}
 
