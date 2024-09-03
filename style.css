@@ -1,4 +1,6 @@
 :root {
+	--gold: #FDD539;
+
 	font-family: Inter, sans-serif;
 	font-feature-settings: 'calt' 1, 'dlig' 1, 'liga' 1, 'cv05' 1, 'cv08' 1, 'ss01' 1;
 }
@@ -20,20 +22,39 @@ h1 {
 }
 
 h2 {
+	position: relative;
+	width: fit-content;
 	font-weight: 550;
 	font-size: 1.1rem;
-	margin-top: 3rem;
+	margin-top: 4rem;
 	margin-bottom: 0;
 }
 
+h2::after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 110%;
+	height: 110%;
+	top: -5%;
+	left: -5%;
+	z-index: -100;
+	transform: rotate(-2.5deg);
+	background-color: var(--gold);
+}
+
 p, li {
-	line-height: 1.4;
+	line-height: 1.5;
 }
 
 small {
 	display: block;
 	font-size: 1rem;
 	margin-bottom: 2rem;
+}
+
+ul {
+	padding-left: 1.5rem;
 }
 
 li {
@@ -60,6 +81,18 @@ strong {
 body {
 	margin: 0;
 	padding: 1.5rem;
+	overflow-x: hidden;
+}
+
+#background {
+	position: absolute;
+	width: 1000px;
+	height: 2000px;
+	left: -650px;
+	top: -1100px;
+	transform: rotate(85deg);
+	background-color: var(--gold);
+	z-index: -100;
 }
 
 #imgcontainer {
@@ -74,10 +107,18 @@ body {
 	border-radius: 0.5rem;
 }
 
+#joblist {
+	padding-bottom: 0.5rem;
+}
+
 #verwijzing {
 	margin-top: 0.5rem;
 	font-size: 0.9rem;
 	color: #666;
+}
+
+#uni {
+	list-style-type: "\1F3EB";
 }
 
 #voxsio {
@@ -96,12 +137,16 @@ body {
 	list-style-type: "\1F393";
 }
 
+#tacotab {
+	list-style-type: "\1F32E";
+}
+
 #contact {
 	margin-top: 0.5rem;
 }
 
 footer {
-	margin-top: 5rem;
+	margin-top: 16rem;
 	margin-bottom: 4rem;
 	text-align: center;
 	color: #666;
@@ -118,16 +163,31 @@ footer {
 		padding: 1rem;
 	}
 
+	#background {
+		position: fixed;
+		top: -850px;
+		left: -750px;
+		transform: rotate(15deg);
+	}
+
 	#container {
 		display: flex;
 		min-height: 95vh;
 		max-width: 2000px;
 		margin: 0 auto;
+		padding-top: 4rem;
+	}
+	
+	#imgcontainer {
+		position: sticky;
+		top: 5rem;
+		align-self: flex-start;
 	}
 
 	#textbits {
-		max-width: 80ch;
+		max-width: 65ch;
 		margin-left: 5vw;
+		margin-right: 2rem;
 	}
 
 	footer {
