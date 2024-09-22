@@ -2,8 +2,9 @@
 	--gold: #FDD539;
 
 	font-family: Inter, sans-serif;
-	font-feature-settings: 'calt' 1, 'dlig' 1, 'liga' 1, 'cv05' 1, 'cv08' 1, 'ss01' 1;
+	font-feature-settings: 'calt' 1, 'dlig' 1, 'liga' 1, 'cv05' 1, 'cv08' 1, 'ss01' 1, 'ss03' 1;
 }
+
 @supports (font-variation-settings: normal) {
 	:root { font-family: InterVariable, sans-serif; }
 }
@@ -16,7 +17,7 @@
 
 
 h1 {
-	font-size: 2rem;
+	font-size: 1.75rem;
 	margin-top: 3rem;
 	margin-bottom: 0.5rem;
 }
@@ -27,7 +28,7 @@ h2 {
 	font-weight: 550;
 	font-size: 1.1rem;
 	margin-top: 4rem;
-	margin-bottom: 0;
+	margin-bottom: 0.5rem;
 }
 
 h2::after {
@@ -58,7 +59,7 @@ ul {
 }
 
 li {
-	margin-bottom: 0.75rem;
+	margin-bottom: 1.5rem;
 	padding-left: 0.75rem;
 }
 
@@ -81,44 +82,36 @@ strong {
 body {
 	margin: 0;
 	padding: 1.5rem;
-	overflow-x: hidden;
-}
-
-#mobile-wrapper {
-	width: 100%;
-	overflow-x: hidden;
 }
 
 #background {
 	position: absolute;
-	width: 1000px;
-	height: 2000px;
-	left: -650px;
-	top: -1200px;
-	transform: rotate(85deg);
+	width: 100%;
+	aspect-ratio: 21/9;
+	max-height: 525px;
+	left: 0;
+	margin-top: 1rem;
 	background-color: var(--gold);
 	z-index: -100;
 }
 
-#imgcontainer {
+#photocontainer {
 	width: 100%;
-	max-width: 600px;
-	aspect-ratio: 4/3;
+	aspect-ratio: 16/9;
 }
 
-#cruzdelrayo {
+#photograph {
 	width: 100%;
 	box-sizing: border-box;
 	border: 4px solid black;
 	border-radius: 0.5rem;
 }
 
-#joblist {
-	padding-bottom: 0.5rem;
+#introarr {
+	display: none;
 }
 
 #verwijzing {
-	margin-top: 0.5rem;
 	font-size: 0.9rem;
 	color: #666;
 }
@@ -147,51 +140,72 @@ body {
 	list-style-type: "\1F32E";
 }
 
-#contact {
-	margin-top: 0.5rem;
-}
-
 footer {
-	margin-top: 16rem;
-	margin-bottom: 4rem;
+	margin-top: 12rem;
+	margin-bottom: 2rem;
 	text-align: center;
 	color: #666;
 }
 
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 576px) {
+	body {
+		max-width: 576px;
+		margin: 0 auto;
+	}
+
+	#background {
+		height: 240px;
+		aspect-ratio: unset;
+	}
+
+	#introarr {
+		display: inline-block;
+	}
+}
+
+
+@media screen and (min-width: 1200px) {
 	h1 {
-		font-size: 3rem;
+		font-size: 2rem;
 		margin-top: 1rem;
 	}
 
 	body {
-		padding: 1rem;
-	}
-
-	#background {
-		position: fixed;
-		top: -850px;
-		left: -750px;
-		transform: rotate(15deg);
+		max-width: 1500px;
+		padding: 0;
 	}
 
 	#container {
 		display: flex;
 		min-height: 95vh;
-		max-width: 2000px;
 		margin: 0 auto;
 		padding-top: 4rem;
 	}
-	
-	#imgcontainer {
-		position: sticky;
-		top: 4rem;
-		align-self: flex-start;
+
+	header {
+		position: relative;
+		width: 33%;
+		padding-left: 1rem;
 	}
 
-	#textbits {
-		max-width: 65ch;
+	#background {
+		position: absolute;
+		height: calc(100% + 12rem);
+		max-height: unset;
+		width: 60%;
+		top: -5rem;
+		margin-top: 0;
+		left: 20%;
+	}
+
+	#photocontainer {
+		position: sticky;
+		top: 4rem;
+	}
+
+	main {
+		max-width: 60ch;
 		margin-left: 5vw;
 		margin-right: 2rem;
 	}
@@ -202,8 +216,9 @@ footer {
 	}
 }
 
-@media screen and (min-width: 1200px) {
+
+@media screen and (min-width: 1500px) {
 	h1 {
-		font-size: 4rem;
+		font-size: 3rem;
 	}
 }
