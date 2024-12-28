@@ -18,7 +18,7 @@
 
 h1 {
 	font-size: 1.75rem;
-	margin-top: 3rem;
+	margin-top: 2rem;
 	margin-bottom: 0.5rem;
 }
 
@@ -90,21 +90,16 @@ body {
 	aspect-ratio: 21/9;
 	max-height: 525px;
 	left: 0;
-	margin-top: 1rem;
+	top: 0;
 	background-color: var(--gold);
 	z-index: -100;
 }
 
-#photocontainer {
-	width: 100%;
-	aspect-ratio: 16/9;
-}
-
 #photograph {
-	width: 100%;
+	width: 50%;
 	box-sizing: border-box;
 	border: 4px solid black;
-	border-radius: 0.5rem;
+	border-radius: 100rem;
 }
 
 #introarr {
@@ -143,7 +138,6 @@ body {
 footer {
 	margin-top: 12rem;
 	margin-bottom: 2rem;
-	text-align: center;
 	color: #666;
 }
 
@@ -185,7 +179,7 @@ footer {
 
 	header {
 		position: relative;
-		width: 33%;
+		width: 30%;
 		padding-left: 1rem;
 	}
 
@@ -193,15 +187,15 @@ footer {
 		position: absolute;
 		height: calc(100% + 12rem);
 		max-height: unset;
-		width: 60%;
+		width: 100%;
 		top: -5rem;
+		left: -4rem;
 		margin-top: 0;
-		left: 20%;
 	}
 
-	#photocontainer {
-		position: sticky;
-		top: 4rem;
+	#photograph {
+		width: 60%;
+		margin-left: 40%;
 	}
 
 	main {
