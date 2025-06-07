@@ -1,0 +1,28 @@
+{
+  "name": "rayodev",
+  "version": "1.0.0",
+  "description": "Website! Blog! Or, well, at the very least a placeholder for those things",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayoverweij/rayodev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rayoverweij/rayodev/issues"
+  },
+  "homepage": "https://github.com/rayoverweij/rayodev#readme",
+  "dependencies": {
+    "astro": "^5.9.1"
+  }
+}

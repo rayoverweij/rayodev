@@ -1,23 +1,31 @@
+---
+import { Image } from "astro:assets";
+import "../styles/style.css";
+import rayoonaboat from "../images/rayoonaboat.webp";
+---
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Rayo Verweij | Home</title>
-		<meta name="description" content="Rayo is a PhD candidate at the CDT in Designing Responsible Natural Language Processing at the University of Edinburgh as well as the Chief Technology Officer of Voxsio, building digital health apps in collaboration with the NHS.">
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1" />
+		<meta name="description" content="Rayo is a PhD candidate at the CDT in Designing Responsible Natural Language Processing at the University of Edinburgh as well as the Chief Technology Officer of Voxsio, building digital health apps in collaboration with the NHS.">
 		<link rel="preconnect" href="https://rsms.me/" />
 		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-		<link rel="stylesheet" href="style.css" />
 		<link rel="icon" href="/favicon.ico" />
 	</head>
 	<body>
 		<div id="container">
 			<header>
 				<div id="background"></div>
-				<img
-					id="photograph"
-					src="./rayoonaboat.webp"
-					alt="Rayo sitting on a sailing boat smiling at the camera"
-				/>
+				<div id="photograph-container">
+					<Image
+						id="photograph"
+						src={rayoonaboat}
+						alt="Rayo sitting on a sailing boat smiling at the camera"
+					/>
+				</div>
 			</header>
 			<main>
 				<h1>Hoi! I'm Rayo Verweij</h1>
@@ -31,7 +39,7 @@
 				</ul>
 
 				<h2>Verweijzingen</h2>
-				<p id="verwijzing"><strong>ver·'wij·zing</strong> <em>(de, v., mv: -en)</em> "reference".</p>
+				<p id="verwijzing"><strong>ver&middot;'wij&middot;zing</strong> <em>(de, v., mv: -en)</em> "reference".</p>
 				<ul>
 					<li id="aisummit">At the 2023 Scottish AI Summit in Glasgow I hosted a workshop called &ldquo;Building Inclusive AI: Language, Dialect, and Diversity&rdquo; that <a href="https://www.scottishaisummit.com/workshop-building-inclusive-ai-language-dialect-and-diversity" target="_blank" rel="noopener noreferrer">you can watch some bits of</a> if you're interested</li>
 					<li id="dissertation">My 2021 MSc dissertation, &ldquo;An Online Research Environment for Behavioural Studies into Reinforcement Learning&rdquo;, can be <a href="/docs/Verweij2021-OnlineResearchEnvironment.pdf" target="_blank" rel="noopener noreferrer">read here</a></li>
@@ -48,7 +56,7 @@
 
 		<script>
 			const year = new Date().getFullYear();
-			document.getElementById("date").innerText = year;
+			document.getElementById("date")!.innerText = year.toString();
 		</script>
 	</body>
 </html>
