@@ -24,6 +24,7 @@
   "homepage": "https://github.com/rayoverweij/rayodev#readme",
   "dependencies": {
     "@astrojs/vercel": "^8.1.5",
+    "@vercel/analytics": "^1.5.0",
     "astro": "^5.9.1"
   }
 }
