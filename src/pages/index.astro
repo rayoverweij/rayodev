@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 import Analytics from "@vercel/analytics/astro";
 import SpeedInsights  from "@vercel/speed-insights/astro";
-import "../styles/style.css";
-import rayoonaboat from "../images/rayoonaboat.webp";
+import "../styles/global.css";
+import profilepic from "../images/rayosciencefestival.webp";
 ---
 
 <!DOCTYPE html>
@@ -13,48 +13,76 @@ import rayoonaboat from "../images/rayoonaboat.webp";
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1" />
 		<meta name="description" content="Rayo is a PhD candidate at the CDT in Designing Responsible Natural Language Processing at the University of Edinburgh as well as the Chief Technology Officer of Voxsio, building digital health apps in collaboration with the NHS.">
-		<link rel="preconnect" href="https://rsms.me/" />
-		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 		<link rel="icon" href="/favicon.ico" />
 	</head>
 	<body>
-		<div id="container">
-			<header>
-				<div id="background"></div>
-				<div id="photograph-container">
+		<div class="max-w-7xl mt-8 md:mt-24 mx-auto flex flex-col md:flex-row justify-center gap-x-12 xl:gap-x-24 gap-y-8">
+			<header class="flex-col mx-auto md:mx-0 md:pl-6 items-center text-center">
+				<div class="relative w-[250px] h-[322px] bg-black rounded-t-[100px] rounded-b-lg border-2 overflow-hidden">
 					<Image
-						id="photograph"
-						src={rayoonaboat}
+						width={250}
+						class="absolute top-0 left-0 hover:opacity-15 transition"
+						src={profilepic}
 						alt="Rayo sitting on a sailing boat smiling at the camera"
 					/>
+					<p class="text-white pt-[190px]">
+						Photo by Chris Scott
+					</p>
 				</div>
 			</header>
-			<main>
-				<h1>Hoi! I'm Rayo Verweij</h1>
-				<small><span id="introarr">&rarr;&nbsp;</span><em>That's /rah-yo ver-wai/ and I use he/they pronouns</em></small>
+			<main class="max-w-[64ch] mx-auto md:mx-0 px-6 md:pr-6">
+				<div class="text-center md:text-left">
+					<p class="mb-0 -ml-7.5 text-lg">
+						👋 Hoi! I'm
+					</p>
+					<h1 class="font-semibold text-5xl leading-12 tracking-widest mb-4">
+						<span class="swsh">R</span>AYO
+						<br />
+						<span class="pl-0">VERWE&IJlig;</span>
+					</h1>
+					<small class="block text-base mb-8">
+						<span class="hidden md:inline-block">&rarr;&nbsp;</span>
+						<em>That's /rah-yo ver-wai/ and I use he/they pronouns</em>
+					</small>
+				</div>
 				
 				<p>Currently...</p>
-				<ul id="joblist">
-					<li id="uni">A PhD candidate at the Centre for Doctoral Training in <a href="https://responsiblenlp.org" target="_blank" rel="noopener noreferrer">Designing Responsible Natural Language Processing</a> at the University of Edinburgh, looking at the future of AI in schools</li>
-					<li id="voxsio">The chief technology officer of <a href="https://voxsio.com" target="_blank" rel="noopener noreferrer">Voxsio</a>, building ethical and engaging digital health apps in partnership with the NHS</li>
-					<li id="prewired">A trustee of <a href="https://prewired.org" target="_blank" rel="noopener noreferrer">Prewired</a>, an Edinburgh charity that runs a weekly after-school coding club for young people</li>
-				</ul>
-
-				<h2>Verweijzingen</h2>
-				<p id="verwijzing"><strong>ver&middot;'wij&middot;zing</strong> <em>(de, v., mv: -en)</em> "reference".</p>
 				<ul>
-					<li id="aisummit">At the 2023 Scottish AI Summit in Glasgow I hosted a workshop called &ldquo;Building Inclusive AI: Language, Dialect, and Diversity&rdquo; that <a href="https://www.scottishaisummit.com/workshop-building-inclusive-ai-language-dialect-and-diversity" target="_blank" rel="noopener noreferrer">you can watch some bits of</a> if you're interested</li>
-					<li id="dissertation">My 2021 MSc dissertation, &ldquo;An Online Research Environment for Behavioural Studies into Reinforcement Learning&rdquo;, can be <a href="/docs/Verweij2021-OnlineResearchEnvironment.pdf" target="_blank" rel="noopener noreferrer">read here</a></li>
-					<li id="tacotab">In 2020 I built <a href="https://rayoverweij.github.io/tacotab/" target="_blank" rel="noopener noreferrer">TacoTab</a>, a web app for tabulating World Schools-style debating tournaments, for the <a href="https://debate.bard.edu" target="_blank" rel="noopener noreferrer">Bard Debate Union</a>&mdash;it still holds up quite well!
+					<li class="list-['🏫']">
+						A <strong>PhD candidate</strong> at the Centre for Doctoral Training in <a href="https://responsiblenlp.org" target="_blank" rel="noopener noreferrer">Designing Responsible Natural Language Processing</a> at the University of Edinburgh
+						<ul class="mt-4">
+							<li class="list-['🏗️']">
+								My work investigates the <strong>inclusion of children as fully-fledged research partners in the creation of NLP-based tools for education</strong>, employing the product design process as a constructionist curriculum to enable profound learning about emerging technologies such as generative AI
+							</li>
+							<li class="list-['🧑‍🏫']">
+								I am supervised by <a href="https://homepages.inf.ed.ac.uk/fmcneill/" target="_blank" rel="noopener noreferrer">Prof Fiona McNeill</a>, <a href="https://www.de.ed.ac.uk/people/dr-cara-wilson" target="_blank" rel="noopener noreferrer">Dr Cara Wilson</a>, and <a href="https://www.de.ed.ac.uk/people/valentina-andries" target="_blank" rel="noopener noreferrer">Dr Valentina Andries</a>, and am affiliated with <a href="https://designinformatics.org" target="_blank" rel="noopener noreferrer">Design Informatics</a> and the <a href="https://efi.ed.ac.uk" target="_blank" rel="noopener noreferrer">Edinburgh Futures Institute</a>
+							</li>
+						</ul>
+					</li>
+					<li class="list-['💾']">A trustee of <a href="https://prewired.org" target="_blank" rel="noopener noreferrer">Prewired</a>, an Edinburgh charity that runs a weekly after-school coding club for young people</li>
+				</ul>
+				
+				<h2>
+					Verwe&IJlig;zingen
+				</h2>
+				<p class="text-sm text-gray-500">
+					<strong>ver&middot;'wij&middot;zing</strong> <em>(de, v., mv: -en)</em> "reference".
+				</p>
+				<ul>
+					<li class="list-['🩺']">From 2021&ndash;2025, I was the chief technology officer of <a href="https://voxsio.com" target="_blank" rel="noopener noreferrer">Voxsio</a>, building ethical and engaging digital health apps in partnership with the NHS</li>
+					<li class="list-['🤖']">At the 2023 Scottish AI Summit in Glasgow I hosted a workshop called &ldquo;Building Inclusive AI: Language, Dialect, and Diversity&rdquo; that <a href="https://www.scottishaisummit.com/workshop-building-inclusive-ai-language-dialect-and-diversity" target="_blank" rel="noopener noreferrer">you can watch some bits of</a> if you're interested</li>
+					<li class="list-['🎓']">My 2021 MSc dissertation, &ldquo;An Online Research Environment for Behavioural Studies into Reinforcement Learning&rdquo;, can be <a href="/docs/Verweij2021-OnlineResearchEnvironment.pdf" target="_blank" rel="noopener noreferrer">read here</a></li>
+					<li class="list-['🌮']">In 2020 I built <a href="https://rayoverweij.github.io/tacotab/" target="_blank" rel="noopener noreferrer">TacoTab</a>, a web app for tabulating World Schools-style debating tournaments, for the <a href="https://debate.bard.edu" target="_blank" rel="noopener noreferrer">Bard Debate Union</a>&mdash;it still holds up quite well!
 				</ul>
 
 				<h2>Contact</h2>
 				<p>📧 rayo [dot] verweij [at] ed [dot] ac [dot] uk or 🦋 <a href="https://bsky.app/profile/rayo.dev" target="_blank" rel="noopener noreferrer">Bluesky</a> or 👔 <a href="https://linkedin.com/in/rayo-verweij" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+
+				<footer class="mt-40 mb-20 text-gray-500">
+					&copy; Rayo Verweij <span id="date"></span>.
+				</footer>
 			</main>
 		</div>
-		<footer>
-			&copy; Rayo Verweij <span id="date"></span>.
-		</footer>
 
 		<script>
 			const year = new Date().getFullYear();

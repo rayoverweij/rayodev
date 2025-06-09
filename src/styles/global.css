@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@font-face {
+	font-family: "Work Sans";
+	src: url("/fonts/WorkSans-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Work Sans";
+	src: url("/fonts/WorkSans-Italic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Work Sans";
+	src: url("/fonts/WorkSans-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Work Sans";
+	src: url("/fonts/WorkSans-MediumItalic.woff2") format("woff2");
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Work Sans";
+	src: url("/fonts/WorkSans-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Work Sans";
+	src: url("/fonts/WorkSans-SemiBoldItalic.woff2") format("woff2");
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Work Sans";
+	src: url("/fonts/WorkSans-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Work Sans";
+	src: url("/fonts/WorkSans-BoldItalic.woff2") format("woff2");
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+@theme {
+	--font-sans: "Work Sans", sans-serif;
+	--font-sans--font-feature-settings: "ss03", "ss05";
+}
+
+@layer base {
+	::selection {
+		@apply bg-black text-white;
+	}
+
+	h2 {
+		@apply relative w-fit mt-20 mb-2 font-semibold text-[1.1rem] uppercase;
+	}
+
+	h2::after {
+		@apply block absolute w-[110%] h-[110%] -top-[5%] -left-[5%] -z-50 bg-yellow-200;
+		content: "";
+		transform: rotate(-1deg);
+	}
+
+	p, li {
+		@apply leading-relaxed;
+	}
+
+	ul {
+		@apply mt-4 pl-6;
+	}
+
+	li {
+		@apply mb-6 pl-3;
+	}
+
+	a {
+		@apply text-blue-700 underline underline-offset-4 hover:decoration-wavy hover:underline-offset-2 hover:decoration-1;
+	}
+
+	strong {
+		@apply font-medium;
+	}
+}

@@ -24,8 +24,10 @@
   "homepage": "https://github.com/rayoverweij/rayodev#readme",
   "dependencies": {
     "@astrojs/vercel": "^8.1.5",
+    "@tailwindcss/vite": "^4.1.8",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.9.1"
+    "astro": "^5.9.1",
+    "tailwindcss": "^4.1.8"
   }
 }
