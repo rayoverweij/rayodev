@@ -1,22 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import Analytics from "@vercel/analytics/astro";
-import SpeedInsights  from "@vercel/speed-insights/astro";
-import "../styles/global.css";
-import profilepic from "../images/rayosciencefestival.webp";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import profilepic from "../assets/rayosciencefestival.webp";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Rayo Verweij | Home</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, minimum-scale=1" />
-		<meta name="description" content="Rayo is a PhD candidate at the Centre for Doctoral Training in Designing Responsible Natural Language Processing at the University of Edinburgh.">
-		<link rel="icon" href="/favicon.ico" />
-	</head>
-	<body>
-		<div class="max-w-7xl mt-8 md:mt-24 mx-auto flex flex-col md:flex-row justify-center gap-x-12 xl:gap-x-24 gap-y-8">
+<BaseLayout
+	title="Home"
+	desc="Rayo is a PhD candidate at the Centre for Doctoral Training in Designing Responsible Natural Language Processing at the University of Edinburgh."
+>
+	<div class="max-w-7xl mt-8 md:mt-24 mx-auto flex flex-col md:flex-row justify-center gap-x-12 xl:gap-x-24 gap-y-8">
 			<header class="flex-col mx-auto md:mx-0 md:pl-6 items-center text-center">
 				<div class="relative w-[250px] h-[322px] bg-black rounded-t-[100px] rounded-b-lg border-2 overflow-hidden">
 					<Image
@@ -69,10 +61,21 @@ import profilepic from "../images/rayosciencefestival.webp";
 					<strong>ver&middot;'wij&middot;zing</strong> <em>(de, v., mv: -en)</em> "reference".
 				</p>
 				<ul>
-					<li class="list-['🩺']">From 2021&ndash;2025, I was the chief technology officer of <a href="https://voxsio.com" target="_blank" rel="noopener noreferrer">Voxsio</a>, building ethical and engaging digital health apps in partnership with the NHS</li>
-					<li class="list-['🤖']">At the 2023 Scottish AI Summit in Glasgow I hosted a workshop called &ldquo;Building Inclusive AI: Language, Dialect, and Diversity&rdquo; that <a href="https://www.scottishaisummit.com/workshop-building-inclusive-ai-language-dialect-and-diversity" target="_blank" rel="noopener noreferrer">you can watch some bits of</a> if you're interested</li>
-					<li class="list-['🎓']">My 2021 MSc dissertation, &ldquo;An Online Research Environment for Behavioural Studies into Reinforcement Learning&rdquo;, can be <a href="/docs/Verweij2021-OnlineResearchEnvironment.pdf" target="_blank" rel="noopener noreferrer">read here</a></li>
-					<li class="list-['🌮']">In 2020 I built <a href="https://rayoverweij.github.io/tacotab/" target="_blank" rel="noopener noreferrer">TacoTab</a>, a web app for tabulating World Schools-style debating tournaments, for the <a href="https://debate.bard.edu" target="_blank" rel="noopener noreferrer">Bard Debate Union</a>&mdash;it still holds up quite well!
+					<li class="list-['🩺']">
+						From 2021&ndash;2025, I was the chief technology officer of <a href="https://voxsio.com" target="_blank" rel="noopener noreferrer">Voxsio</a>, building ethical and engaging digital health apps in partnership with the NHS
+					</li>
+					<li class="list-['🎨']">
+						In early 2025, as part of my research, I ran a workshop at 7 Scottish and Dutch primary schools, asking students to design what they imagined AI at school would look like in the future. <a href="/designing-future-ai-schools">All their designs are showcased here!</a>
+					</li>
+					<li class="list-['🤖']">
+						At the 2023 Scottish AI Summit in Glasgow I hosted a workshop called &ldquo;Building Inclusive AI: Language, Dialect, and Diversity&rdquo; that <a href="https://www.scottishaisummit.com/workshop-building-inclusive-ai-language-dialect-and-diversity" target="_blank" rel="noopener noreferrer">you can watch some bits of</a> if you're interested
+					</li>
+					<li class="list-['🎓']">
+						My 2021 MSc dissertation, &ldquo;An Online Research Environment for Behavioural Studies into Reinforcement Learning&rdquo;, can be <a href="/docs/Verweij2021-OnlineResearchEnvironment.pdf" target="_blank" rel="noopener noreferrer">read here</a>
+					</li>
+					<li class="list-['🌮']">
+						In 2020 I built <a href="https://rayoverweij.github.io/tacotab/" target="_blank" rel="noopener noreferrer">TacoTab</a>, a web app for tabulating World Schools-style debating tournaments, for the <a href="https://debate.bard.edu" target="_blank" rel="noopener noreferrer">Bard Debate Union</a>&mdash;it still holds up quite well!
+					</li>
 				</ul>
 
 				<h2>Contact</h2>
@@ -88,8 +91,4 @@ import profilepic from "../images/rayosciencefestival.webp";
 			const year = new Date().getFullYear();
 			document.getElementById("date")!.innerText = year.toString();
 		</script>
-
-		<Analytics />
-		<SpeedInsights />
-	</body>
-</html>
+</BaseLayout>

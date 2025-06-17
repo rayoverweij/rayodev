@@ -1,0 +1,119 @@
+---
+import { Image } from "astro:assets";
+import DialogCloseButton from "./DialogCloseButton.astro";
+
+enum Type {
+	Robot,
+	App,
+	Device
+};
+
+interface Props {
+	id: string;
+	files: ImageMetadata[];
+	name: string;
+	types: Type[];
+	desc: string;
+};
+
+const {id, files, name, types, desc} = Astro.props;
+---
+
+<design-card data-id={id}>
+	<button
+		class="design w-80 p-3 hover:scale-105 active:scale-95 transition cursor-pointer"
+		id={`design-button-${id}`}
+	>
+		{ files[0] &&
+			<Image
+				src={files[0]}
+				alt={desc}
+			/>
+		}
+	</button>
+	
+	<dialog
+		class="design-dialog w-7xl max-w-[95vw] mx-auto mt-[10vh] border rounded-sm shadow-lg overflow-hidden scale-95 open:scale-100 starting:open:scale-95"
+		id={`design-dialog-${id}`}
+	>
+		<div class="max-h-[80vh] flex flex-col md:flex-row overflow-y-auto md:overflow-y-visible">
+			<DialogCloseButton
+				id={`tickets-dialog-close-btn-${id}`}
+				style="absolute top-5 right-5 bg-white"
+			/>
+
+			<div class="p-8 md:w-2/5">
+				<h1 class="mb-2 text-2xl font-semibold">
+					{ name }
+				</h1>
+				<div class="flex mb-4 gap-2">
+					{ types.map(type => (
+						<div class="px-3 py-1 border rounded-full">
+							{
+								type === Type.Robot ? (
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="inline" viewBox="0 0 16 16">
+										<path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135"/>
+										<path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5"/>
+									</svg>
+									<span>Robot</span>
+								) :
+								type === Type.App ? (
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="inline" viewBox="0 0 16 16">
+										<path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1z"/>
+										<path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+									</svg>
+									<span>App</span>
+								) : (
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="inline" viewBox="0 0 16 16">
+										<path d="M11.5 2a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5m-10 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zM5 3a1 1 0 0 0-1 1h-.5a.5.5 0 0 0 0 1H4v1h-.5a.5.5 0 0 0 0 1H4a1 1 0 0 0 1 1v.5a.5.5 0 0 0 1 0V8h1v.5a.5.5 0 0 0 1 0V8a1 1 0 0 0 1-1h.5a.5.5 0 0 0 0-1H9V5h.5a.5.5 0 0 0 0-1H9a1 1 0 0 0-1-1v-.5a.5.5 0 0 0-1 0V3H6v-.5a.5.5 0 0 0-1 0zm0 1h3v3H5zm6.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
+										<path d="M1 2a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-2H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 9H1V8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6H1V5H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 2zm1 11a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1z"/>
+									</svg>
+									<span>Device</span>
+								)
+							}
+						</div>
+					))}
+				</div>
+				<p>
+					{ desc }
+				</p>
+			</div>
+			
+			<div class="md:w-3/5 p-8 md:overflow-y-auto">
+				{ files.map(file => (
+					<Image
+						src={file}
+						alt={desc}
+						class="mb-4"
+					/>
+				)) }
+			</div>
+		</div>
+	</dialog>
+</design-card>
+
+<script>
+	class DesignCard extends HTMLElement {
+		connectedCallback() {
+			const id = this.dataset.id;
+			const designButton = this.querySelector(`#design-button-${id}`) as HTMLButtonElement;
+			const designDialog = this.querySelector(`#design-dialog-${id}`) as HTMLDialogElement;
+			const closeButton = this.querySelector(`#tickets-dialog-close-btn-${id}`) as HTMLButtonElement;
+
+			designButton?.addEventListener("click", () => {
+				designDialog?.showModal();
+			});
+
+			closeButton.addEventListener("click", () => {
+				designDialog.close();
+			});
+
+			designDialog.addEventListener("click", event => {
+				// Close the dialog on tapping the backdrop
+				if (event.target === designDialog) designDialog.close();
+			});
+		}
+	}
+
+	customElements.define("design-card", DesignCard);
+</script>

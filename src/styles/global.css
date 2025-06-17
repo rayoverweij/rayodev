@@ -74,6 +74,17 @@
 		@apply bg-black text-white;
 	}
 
+	html {
+		@apply transition duration-300;
+		scrollbar-gutter: stable;
+	}
+
+	html:has(dialog[open]) {
+		@apply overflow-y-hidden;
+	}
+
+	html:has(.design-dialog[open]) { @apply bg-black/25; }
+
 	h2 {
 		@apply relative w-fit mt-20 mb-2 font-semibold text-[1.1rem] uppercase;
 	}
@@ -102,5 +113,10 @@
 
 	strong {
 		@apply font-medium;
+	}
+
+	dialog {
+		@apply opacity-0 open:opacity-100 starting:open:opacity-0 transition-all transition-discrete duration-300;
+		@apply backdrop:bg-transparent open:backdrop:bg-black/25 starting:open:backdrop:bg-transparent backdrop:transition-all backdrop:transition-discrete backdrop:duration-300;
 	}
 }
