@@ -7,9 +7,11 @@ import SpeedInsights  from "@vercel/speed-insights/astro";
 interface Props {
 	title: string;
 	desc: string;
+	image: string;
+	imageAlt: string;
 }
 
-const { title, desc } = Astro.props;
+const { title, desc, image, imageAlt } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,7 +20,12 @@ const { title, desc } = Astro.props;
 		<title>{ title } | Rayo Verweij</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1" />
-		<meta name="description" content={desc}>
+		<meta name="description" content={desc} />
+		<meta property="og:title" content={title} />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content={image} />
+		<meta property="og:image:alt" content={imageAlt} />
+		<meta property="og:description" content={desc} />
 		<link rel="icon" href="/favicon.ico" />
 	</head>
 	<body class="bg-white">
