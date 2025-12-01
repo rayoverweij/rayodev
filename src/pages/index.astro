@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import profilepic from "../assets/rayosciencefestival.webp";
+import profilepic from "../assets/rayo.jpg";
 ---
 
 <BaseLayout
@@ -9,10 +9,25 @@ import profilepic from "../assets/rayosciencefestival.webp";
 	desc="Rayo is a PhD candidate at the Centre for Doctoral Training in Designing Responsible Natural Language Processing at the University of Edinburgh."
 	image=""
 	imageAlt=""
-	>
-	<div class="max-w-7xl mt-8 md:mt-24 mx-auto flex flex-col md:flex-row justify-center gap-x-12 xl:gap-x-24 gap-y-8">
-			<header class="flex-col mx-auto md:mx-0 md:pl-6 items-center text-center">
-				<div class="relative w-[250px] h-[322px] bg-black rounded-t-[100px] rounded-b-lg border-2 overflow-hidden">
+>
+	<div class="max-w-7xl mt-8 md:mt-24 mx-auto">
+		<header class="flex items-center mb-4">
+			<p class="font-semibold text-4xl uppercase">
+				<span class="swsh">R</span>ayo Verwe&IJlig;
+			</p>
+			<p class="text-lg ml-24">
+				About
+			</p>
+			<p class="text-lg ml-24">
+				Updates
+			</p>
+			<p class="text-lg ml-24">
+				Research
+			</p>
+		</header>
+		<div class="flex flex-col md:flex-row gap-x-12 xl:gap-x-48 gap-y-8 border-t-2">
+			<aside class="flex-col -mt-4 mx-auto md:mx-0 items-center justify-center text-center">
+				<div class="relative w-[256px] h-[300px] mx-auto mb-4 bg-black rounded-b-[100px] rounded-t-lg border-2 overflow-hidden">
 					<Image
 						width={500}
 						class="absolute top-0 left-0 hover:opacity-15 transition"
@@ -23,9 +38,18 @@ import profilepic from "../assets/rayosciencefestival.webp";
 						Photo by Chris Scott
 					</p>
 				</div>
-			</header>
-			<main class="max-w-[64ch] mx-auto md:mx-0 px-6 md:pr-6">
-				<div class="text-center md:text-left">
+				<!-- <p class="-mt-2 mb-4 text-gray-600">
+					/rah-yo ver-wai/ &middot; he/they
+				</p>
+				<p class="text-xl">
+					PhD candidate<br>
+					Designing Responsible Natural Language Processing<br>
+					School of Informatics<br>
+					University of Edinburgh
+				</p> -->
+			</aside>
+			<main class="max-w-[64ch] mt-24 mx-auto md:mx-0 px-6 md:pr-6">
+				<!-- <div class="text-center md:text-left">
 					<p class="mb-0 -ml-7.5 text-lg">
 						👋 Hoi! I'm
 					</p>
@@ -38,9 +62,9 @@ import profilepic from "../assets/rayosciencefestival.webp";
 						<span class="hidden md:inline-block">&rarr;&nbsp;</span>
 						<em>That's /rah-yo ver-wai/ and I use he/they pronouns</em>
 					</small>
-				</div>
+				</div> -->
 				
-				<p>Currently...</p>
+				<p>👋 Hoi! I'm currently...</p>
 				<ul>
 					<li class="list-['🏫']">
 						A <strong>PhD candidate</strong> at the Centre for Doctoral Training in <a href="https://responsiblenlp.org" target="_blank" rel="noopener noreferrer">Designing Responsible Natural Language Processing</a> at the University of Edinburgh
