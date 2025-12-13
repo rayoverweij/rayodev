@@ -1,120 +1,111 @@
 ---
-import { Image } from "astro:assets";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import profilepic from "../assets/rayo.jpg";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<BaseLayout
+<MainLayout
 	title="Home"
 	desc="Rayo is a PhD candidate at the Centre for Doctoral Training in Designing Responsible Natural Language Processing at the University of Edinburgh."
 	image=""
 	imageAlt=""
 >
-	<div class="max-w-7xl mt-8 md:mt-24 mx-auto">
-		<header class="flex items-center mb-4">
-			<p class="font-semibold text-4xl uppercase">
-				<span class="swsh">R</span>ayo Verwe&IJlig;
-			</p>
-			<p class="text-lg ml-24">
-				About
-			</p>
-			<p class="text-lg ml-24">
-				Updates
-			</p>
-			<p class="text-lg ml-24">
-				Research
-			</p>
-		</header>
-		<div class="flex flex-col md:flex-row gap-x-12 xl:gap-x-48 gap-y-8 border-t-2">
-			<aside class="flex-col -mt-4 mx-auto md:mx-0 items-center justify-center text-center">
-				<div class="relative w-[256px] h-[300px] mx-auto mb-4 bg-black rounded-b-[100px] rounded-t-lg border-2 overflow-hidden">
-					<Image
-						width={500}
-						class="absolute top-0 left-0 hover:opacity-15 transition"
-						src={profilepic}
-						alt="Rayo sitting on a sailing boat smiling at the camera"
-					/>
-					<p class="text-white pt-[190px]">
-						Photo by Chris Scott
-					</p>
+	<!-- <div class="text-center md:text-left">
+		<p class="mb-0 -ml-7.5 text-lg">
+			👋 Hoi! I'm
+		</p>
+		<h1 class="font-semibold text-5xl leading-12 tracking-widest mb-4">
+			<span class="swsh">R</span>AYO
+			<br />
+			<span class="pl-0">VERWE&IJlig;</span>
+		</h1>
+		<small class="block text-base mb-8">
+			<span class="hidden md:inline-block">&rarr;&nbsp;</span>
+			<em>That's /rah-yo ver-wai/ and I use he/they pronouns</em>
+		</small>
+	</div> -->
+	
+	<div class="mt-16 pl-36">
+		<p>👋 Hoi! I'm currently...</p>
+		<ul>
+			<li class="list-['🏫']">
+				A <strong>PhD candidate</strong> at the Centre for Doctoral Training in <a href="https://responsiblenlp.org" target="_blank" rel="noopener noreferrer">Designing Responsible Natural Language Processing</a> at the University of Edinburgh
+				<ul class="mt-4">
+					<li class="list-['🏗️']">
+						My work investigates the <strong>inclusion of children as fully-fledged research partners in the creation of NLP-based tools for education</strong>, employing the product design process as a participatory, constructionist curriculum to enable profound learning about emerging technologies such as generative AI
+					</li>
+					<li class="list-['🧑‍🏫']">
+						I am supervised by <a href="https://homepages.inf.ed.ac.uk/fmcneill/" target="_blank" rel="noopener noreferrer">Prof Fiona McNeill</a>, <a href="https://www.de.ed.ac.uk/people/dr-cara-wilson" target="_blank" rel="noopener noreferrer">Dr Cara Wilson</a>, and <a href="https://www.de.ed.ac.uk/people/valentina-andries" target="_blank" rel="noopener noreferrer">Dr Valentina Andries</a>, and am affiliated with <a href="https://designinformatics.org" target="_blank" rel="noopener noreferrer">Design Informatics</a> and the <a href="https://technomoralfutures.uk" target="_blank" rel="noopener noreferrer">Centre for Technomoral Futures</a>
+					</li>
+				</ul>
+			</li>
+			<li class="list-['💾']">A trustee of <a href="https://prewired.org" target="_blank" rel="noopener noreferrer">Prewired</a>, an Edinburgh charity that runs a weekly after-school coding club for young people</li>
+		</ul>
+	</div>
+
+	<div class="relative lg:w-[calc(100%+8rem)] my-48 -ml-16 pt-8 px-16 bg-[#f5f1ea] border-2 border-b-3 border-r-3 rounded-xl overflow-hidden">
+		<h1 class="font-medium text-3xl">
+			Recent updates
+		</h1>
+		<div class="mt-12">
+			<div class="flex mt-6 ml-6 pb-18 border-l-3 border-pink-500">
+				<div class="w-12 h-12 -ml-[26px] -mt-6 pt-1 border-3 border-pink-500 rounded-full bg-pink-50 text-center">
+					<span class="text-3xl select-none">📢</span>
 				</div>
-				<!-- <p class="-mt-2 mb-4 text-gray-600">
-					/rah-yo ver-wai/ &middot; he/they
-				</p>
-				<p class="text-xl">
-					PhD candidate<br>
-					Designing Responsible Natural Language Processing<br>
-					School of Informatics<br>
-					University of Edinburgh
-				</p> -->
-			</aside>
-			<main class="max-w-[64ch] mt-24 mx-auto md:mx-0 px-6 md:pr-6">
-				<!-- <div class="text-center md:text-left">
-					<p class="mb-0 -ml-7.5 text-lg">
-						👋 Hoi! I'm
-					</p>
-					<h1 class="font-semibold text-5xl leading-12 tracking-widest mb-4">
-						<span class="swsh">R</span>AYO
-						<br />
-						<span class="pl-0">VERWE&IJlig;</span>
-					</h1>
-					<small class="block text-base mb-8">
-						<span class="hidden md:inline-block">&rarr;&nbsp;</span>
-						<em>That's /rah-yo ver-wai/ and I use he/they pronouns</em>
-					</small>
-				</div> -->
-				
-				<p>👋 Hoi! I'm currently...</p>
-				<ul>
-					<li class="list-['🏫']">
-						A <strong>PhD candidate</strong> at the Centre for Doctoral Training in <a href="https://responsiblenlp.org" target="_blank" rel="noopener noreferrer">Designing Responsible Natural Language Processing</a> at the University of Edinburgh
-						<ul class="mt-4">
-							<li class="list-['🏗️']">
-								My work investigates the <strong>inclusion of children as fully-fledged research partners in the creation of NLP-based tools for education</strong>, employing the product design process as a participatory, constructionist curriculum to enable profound learning about emerging technologies such as generative AI
-							</li>
-							<li class="list-['🧑‍🏫']">
-								I am supervised by <a href="https://homepages.inf.ed.ac.uk/fmcneill/" target="_blank" rel="noopener noreferrer">Prof Fiona McNeill</a>, <a href="https://www.de.ed.ac.uk/people/dr-cara-wilson" target="_blank" rel="noopener noreferrer">Dr Cara Wilson</a>, and <a href="https://www.de.ed.ac.uk/people/valentina-andries" target="_blank" rel="noopener noreferrer">Dr Valentina Andries</a>, and am affiliated with <a href="https://designinformatics.org" target="_blank" rel="noopener noreferrer">Design Informatics</a> and the <a href="https://technomoralfutures.uk" target="_blank" rel="noopener noreferrer">Centre for Technomoral Futures</a>
-							</li>
-						</ul>
-					</li>
-					<li class="list-['💾']">A trustee of <a href="https://prewired.org" target="_blank" rel="noopener noreferrer">Prewired</a>, an Edinburgh charity that runs a weekly after-school coding club for young people</li>
-				</ul>
-				
-				<h2>
-					Verwe&IJlig;zingen
-				</h2>
-				<p class="text-sm text-gray-500">
-					<strong>ver&middot;'wij&middot;zing</strong> <em>(de, v., mv: -en)</em> "reference".
-				</p>
-				<ul>
-					<li class="list-['🩺']">
-						From 2021&ndash;2025, I was the chief technology officer of <a href="https://voxsio.com" target="_blank" rel="noopener noreferrer">Voxsio</a>, building ethical and engaging digital health apps in partnership with the NHS
-					</li>
-					<li class="list-['🎨']">
-						In early 2025, as part of my research, I ran a workshop at 7 Scottish and Dutch primary schools, asking students to design what they imagined AI at school would look like in the future. <a href="/designing-future-ai-schools">All their designs are showcased here!</a>
-					</li>
-					<li class="list-['🤖']">
-						At the 2023 Scottish AI Summit in Glasgow I hosted a workshop called &ldquo;Building Inclusive AI: Language, Dialect, and Diversity&rdquo; that <a href="https://www.scottishaisummit.com/workshop-building-inclusive-ai-language-dialect-and-diversity" target="_blank" rel="noopener noreferrer">you can watch some bits of</a> if you're interested
-					</li>
-					<li class="list-['🎓']">
-						My 2021 MSc dissertation, &ldquo;An Online Research Environment for Behavioural Studies into Reinforcement Learning&rdquo;, can be <a href="/docs/Verweij2021-OnlineResearchEnvironment.pdf" target="_blank" rel="noopener noreferrer">read here</a>
-					</li>
-					<li class="list-['🌮']">
-						In 2020 I built <a href="https://rayoverweij.github.io/tacotab/" target="_blank" rel="noopener noreferrer">TacoTab</a>, a web app for tabulating World Schools-style debating tournaments, for the <a href="https://debate.bard.edu" target="_blank" rel="noopener noreferrer">Bard Debate Union</a>&mdash;it still holds up quite well!
-					</li>
-				</ul>
-
-				<h2>Contact</h2>
-				<p>📧 rayo [dot] verweij [at] ed [dot] ac [dot] uk or 🦋 <a href="https://bsky.app/profile/rayo.dev" target="_blank" rel="noopener noreferrer">Bluesky</a> or 👔 <a href="https://linkedin.com/in/rayo-verweij" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-
-				<footer class="mt-40 mb-20 text-gray-500">
-					&copy; Rayo Verweij <span id="date"></span>.
-				</footer>
-			</main>
+				<div class="-mt-6 ml-4">
+					<small>October 2025</small>
+					<p>I'm recruiting for research!</p>
+				</div>
+			</div>
+			<div class="flex mt-6 ml-6 pb-18 border-l-3 border-indigo-500">
+				<div class="w-12 h-12 -ml-[26px] -mt-6 pt-1 border-3 rounded-full border-indigo-500 bg-indigo-50 text-center">
+					<span class="text-3xl select-none">🎤</span>
+				</div>
+				<div class="-mt-6 ml-4">
+					<small>June 2025</small>
+					<p>I'm at IDC in Iceland!</p>
+				</div>
+			</div>
+			<div class="flex mt-6 ml-6 pb-18 border-l-3 border-indigo-500">
+				<div class="w-12 h-12 -ml-[26px] -mt-6 pt-1 border-3 rounded-full border-indigo-500 bg-indigo-50 text-center">
+					<span class="text-3xl select-none">🎤</span>
+				</div>
+				<div class="-mt-6 ml-4">
+					<small>June 2025</small>
+					<p>I'm speaking at the CDT partner summit!</p>
+				</div>
+			</div>
 		</div>
+		<div class="absolute -bottom-8 right-8 h-[400px] w-[250px] bg-white border -rotate-6" />
+	</div>
 
-		<script>
-			const year = new Date().getFullYear();
-			document.getElementById("date")!.innerText = year.toString();
-		</script>
-</BaseLayout>
+	<h1 class="font-medium text-3xl">
+		Highlighted projects
+	</h1>
+	<div class="mt-8 bg-stone-50 rounded-lg w-full h-[400px]" />
+
+	<!-- <h2>
+		Verwe&IJlig;zingen
+	</h2>
+	<p class="text-sm text-gray-500">
+		<strong>ver&middot;'wij&middot;zing</strong> <em>(de, v., mv: -en)</em> "reference".
+	</p>
+	<ul>
+		<li class="list-['🩺']">
+			From 2021&ndash;2025, I was the chief technology officer of <a href="https://voxsio.com" target="_blank" rel="noopener noreferrer">Voxsio</a>, building ethical and engaging digital health apps in partnership with the NHS
+		</li>
+		<li class="list-['🎨']">
+			In early 2025, as part of my research, I ran a workshop at 7 Scottish and Dutch primary schools, asking students to design what they imagined AI at school would look like in the future. <a href="/designing-future-ai-schools">All their designs are showcased here!</a>
+		</li>
+		<li class="list-['🤖']">
+			At the 2023 Scottish AI Summit in Glasgow I hosted a workshop called &ldquo;Building Inclusive AI: Language, Dialect, and Diversity&rdquo; that <a href="https://www.scottishaisummit.com/workshop-building-inclusive-ai-language-dialect-and-diversity" target="_blank" rel="noopener noreferrer">you can watch some bits of</a> if you're interested
+		</li>
+		<li class="list-['🎓']">
+			My 2021 MSc dissertation, &ldquo;An Online Research Environment for Behavioural Studies into Reinforcement Learning&rdquo;, can be <a href="/docs/Verweij2021-OnlineResearchEnvironment.pdf" target="_blank" rel="noopener noreferrer">read here</a>
+		</li>
+		<li class="list-['🌮']">
+			In 2020 I built <a href="https://rayoverweij.github.io/tacotab/" target="_blank" rel="noopener noreferrer">TacoTab</a>, a web app for tabulating World Schools-style debating tournaments, for the <a href="https://debate.bard.edu" target="_blank" rel="noopener noreferrer">Bard Debate Union</a>&mdash;it still holds up quite well!
+		</li>
+	</ul> -->
+
+	<!-- <h2>Contact</h2>
+	<p>📧 rayo [dot] verweij [at] ed [dot] ac [dot] uk or 🦋 <a href="https://bsky.app/profile/rayo.dev" target="_blank" rel="noopener noreferrer">Bluesky</a> or 👔 <a href="https://linkedin.com/in/rayo-verweij" target="_blank" rel="noopener noreferrer">LinkedIn</a></p> -->
+</MainLayout>

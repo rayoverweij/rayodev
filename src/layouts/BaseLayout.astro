@@ -17,18 +17,26 @@ const { title, desc, image, imageAlt } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>{ title } | Rayo Verweij</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1" />
+		
+		<title>{ title } | Rayo Verweij</title>
 		<meta name="description" content={desc} />
 		<meta property="og:title" content={title} />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content={image} />
 		<meta property="og:image:alt" content={imageAlt} />
 		<meta property="og:description" content={desc} />
+		
 		<link rel="icon" href="/favicon.ico" />
+
+		<script>
+			document.documentElement.classList.toggle("dark",
+				localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+			);
+		</script>
 	</head>
-	<body class="bg-white">
+	<body class="bg-white dark:bg-stone-950 dark:text-white">
 		<slot />
 		<Analytics />
 		<SpeedInsights />
