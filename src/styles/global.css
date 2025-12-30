@@ -125,6 +125,16 @@
 	}
 }
 
+.mark {
+	@apply relative;
+}
+
+.mark::before {
+	@apply block absolute w-[105%] h-[110%] -top-[5%] -left-[2.5%] bg-yellow-200 -z-50;
+	content: "";
+	transform: rotate(-1deg);
+}
+
 .projects::before {
 	@apply block absolute w-[110%] h-[100%] top-0 -left-[5%] bg-white border-2;
 	content: "";
