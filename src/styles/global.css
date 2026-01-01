@@ -103,6 +103,10 @@
 		@apply leading-relaxed;
 	}
 
+	strong {
+		@apply font-medium;
+	}
+
 	ul {
 		@apply mt-4 pl-6;
 	}
@@ -112,7 +116,7 @@
 	}
 
 	a {
-		@apply text-blue-700 underline underline-offset-4 hover:decoration-wavy hover:underline-offset-2 hover:decoration-1;
+		@apply text-blue-700 dark:text-blue-300 underline underline-offset-4 hover:decoration-wavy hover:underline-offset-2 hover:decoration-1;
 	}
 
 	strong {
@@ -139,4 +143,8 @@
 	@apply block absolute w-[110%] h-[100%] top-0 -left-[5%] bg-white border-2;
 	content: "";
 	transform: rotate(-1deg);
+}
+
+html.dark .projects::before {
+	@apply bg-stone-950 border-stone-600;
 }
