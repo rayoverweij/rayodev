@@ -70,7 +70,16 @@
 	--font-sans: "Work Sans", sans-serif;
 	--font-sans--font-feature-settings: "ss03", "ss05";
 
-	--color-tan: #F5F1EA;
+	--color-rock-100: #F5F1EA;
+	--color-rock-200: #DDD9D3;
+	--color-rock-300: #C4C1BB;
+	--color-rock-400: #ACA9A4;
+	--color-rock-500: #93918C;
+	--color-rock-600: #7B7975;
+	--color-rock-700: #62605E;
+	--color-rock-800: #4A4846;
+	--color-rock-900: #31302F;
+	--color-rock-950: #191817;
 }
 
 @layer base {
