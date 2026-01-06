@@ -37,10 +37,10 @@ const { title, desc, image, imageAlt, bg } = Astro.props;
 			);
 		</script>
 	</head>
-	<body class={`${bg === "rock" ? "bg-rock-100" : "bg-white"} dark:bg-rock-950 dark:text-rock-100`}>
-		<header class="absolute right-4 z-10 flex items-start gap-2 text-lg">
+	<body class={`relative ${bg === "rock" ? "bg-rock-100" : "bg-white"} dark:bg-rock-950 dark:text-rock-100 overflow-x-hidden`}>
+		<div class="absolute top-0 right-4 z-10 flex items-start gap-2 text-lg">
 			<button
-				class="group px-1.5 pt-6 pb-1 bg-gray-500/5 border-[1.5px] border-t-0 border-gray-500 rounded-b-full cursor-pointer -translate-y-4 hover:translate-y-0 transition"
+				class="group px-1.5 pt-6 pb-1 bg-gray-500/5 border-[1.5px] border-t-0 border-gray-500 rounded-b-full cursor-pointer -translate-y-4 hover:translate-y-0 hover:border-dashed transition"
 				id="themeToggleLock" title="Follow system theme"
 			>
 				🔮
@@ -57,11 +57,9 @@ const { title, desc, image, imageAlt, bg } = Astro.props;
 			>
 				🌑
 			</button>
-		</header>
-
-		<div class="px-8 lg:px-0 overflow-hidden">
-			<slot />
 		</div>
+
+		<slot />
 
 		<script>
 			const toggleLock = document.getElementById("themeToggleLock") as HTMLButtonElement;

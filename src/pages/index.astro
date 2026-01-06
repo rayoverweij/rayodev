@@ -15,31 +15,30 @@ import voxsio_clinicians from "../assets/voxsio_clinicians.jpg";
 	imageAlt=""
 	bg="rock"
 >
-	<div class="flex flex-col lg:flex-row mt-32 lg:ml-[15%]">
-		<div class="relative flex flex-col-reverse lg:flex-col mb-8 lg:mb-0 pb-12 lg:pb-0">
+	<div class="lg:max-w-6xl lg:mx-auto pt-8 md:pt-32 px-4 md:px-8 flex flex-col md:flex-row">
+		<div class="relative flex flex-col-reverse md:flex-col mb-8 md:mb-0 pb-12 md:pb-0">
 			<div>
-				<h1 class="font-semibold text-4xl text-black dark:text-white uppercase">
+				<h1 class="font-semibold text-3xl lg:text-4xl text-black dark:text-white uppercase">
 					Rayo Verwe&IJlig;
 				</h1>
 	
-				<div class="max-w-[256px] flex justify-between mb-2 px-px text-black/70 dark:text-stone-100/70">
+				<div class="max-w-54 lg:max-w-full flex justify-between mb-2 px-px text-black/70 dark:text-stone-100/70">
 					<span>he/they</span>
 					<span>&middot;</span>
 					<span>/rah-yo ver-wai/</span>
 				</div>
 			</div>
 
-			<div class="relative w-[256px] h-[300px] mb-4 lg:mb-0 border-[1.5px] dark:border-stone-950 rounded-t-[200px] rounded-b-3xl lg:rounded-t-3xl lg:rounded-b-[200px] shadow-[1px_1px_0_black] dark:shadow-[1px_1px_0_var(--color-stone-950)] overflow-hidden">
+			<div class="relative w-54 lg:w-3xs h-64 lg:h-76 mb-4 md:mb-0 border-[1.5px] dark:border-stone-950 rounded-t-[200px] rounded-b-3xl md:rounded-t-3xl md:rounded-b-[200px] shadow-[1px_1px_0_black] dark:shadow-[1px_1px_0_var(--color-stone-950)] overflow-hidden">
 				<Image
 					width={500}
-					class="absolute top-0 left-0"
 					src={profilepic}
 					alt="A headshot of Rayo smiling at the camera"
 				/>
 			</div>
 
-			<div class="mx-auto lg:mx-0 lg:relative">
-				<a  title="GitHub"
+			<div class="mx-auto md:mx-0 md:relative">
+				<!-- <a  title="GitHub"
 					href="https://github.com/rayoverweij"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -48,13 +47,13 @@ import voxsio_clinicians from "../assets/voxsio_clinicians.jpg";
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-10 h-10 fill-black dark:fill-white group-hover:scale-110 transition">
 						<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
 					</svg>
-				</a>
+				</a> -->
 				
 				<a  title="Bluesky"
 					href="https://bsky.app/profile/rayo.dev"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="group block absolute bottom-0 left-0 lg:-top-9 lg:-left-2 w-10 h-10 p-2 rounded-full bg-[#1B73FA] hover:bg-[#2066D0] transition"
+					class="group block absolute bottom-0 left-0 md:-top-8 lg:-top-9 md:-left-2 w-10 h-10 p-2 rounded-full bg-[#1B73FA] hover:bg-[#2066D0] transition"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-6 h-6 pt-px fill-white group-hover:scale-110 transition">
 						<path d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948"/>
@@ -65,7 +64,7 @@ import voxsio_clinicians from "../assets/voxsio_clinicians.jpg";
 					href="https://linkedin.com/in/rayo-verweij"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="group block absolute bottom-0 left-14 lg:-top-2 lg:left-7 w-10 h-10 p-1.5 rounded-full bg-[#1866BE] hover:bg-[#124B8D] transition"
+					class="group block absolute bottom-0 left-14 md:-top-1 lg:-top-2 md:left-7 w-10 h-10 p-1.5 rounded-full bg-[#1866BE] hover:bg-[#124B8D] transition"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" class="w-7 h-7 fill-white group-hover:scale-110 transition">
 						<path d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z" fill="#FFF"/>
@@ -76,7 +75,7 @@ import voxsio_clinicians from "../assets/voxsio_clinicians.jpg";
 					href="https://orcid.org/0009-0007-8996-0233"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="group block absolute bottom-0 left-28 lg:top-2.5 lg:left-17.5 w-10 h-10 px-1 py-[5px] rounded-full bg-[#A6CE39] hover:bg-[#7D9B2C] transition"
+					class="group block absolute bottom-0 left-28 md:top-2.5 lg:top-2 md:left-17.5 w-10 h-10 px-1 py-[5px] rounded-full bg-[#A6CE39] hover:bg-[#7D9B2C] transition"
 				>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="w-8 h-8 fill-white group-hover:scale-110 transition">
 						<g>
@@ -89,17 +88,17 @@ import voxsio_clinicians from "../assets/voxsio_clinicians.jpg";
 			</div>
 		</div>
 
-		<div class="lg:ml-20">
-			<p class="mt-1 text-xl">
+		<div class="md:ml-8 lg:ml-12 xl:ml-20">
+			<p class="mt-1 text-lg lg:text-xl">
 				is a <strong>PhD researcher</strong> at the <strong>University of Edinburgh</strong><br />
 				on the <a href="https://responsiblenlp.org" target="_blank" rel="noopener" class="no-underline hover:underline">CDT in Designing Responsible Natural Language Processing</a>
 			</p>
 
-			<p class="mt-4 text-xl">
+			<p class="mt-4 text-lg lg:text-xl">
 				and a <strong>mentor</strong> at and trustee of <a href="https://prewired.org" target="_blank" rel="noopener" class="no-underline hover:underline">Prewired</a>
 			</p>
 
-			<p class="mt-4 text-xl max-w-132">
+			<p class="mt-4 text-lg lg:text-xl max-w-132">
 				working with <span class="underline decoration-wavy decoration-1 decoration-pink-500">young people</span> on ways to learn about emerging technologies like AI through designing and <span class="underline decoration-wavy decoration-1 decoration-pink-500">building their own tools</span>
 			</p>
 
@@ -121,54 +120,52 @@ import voxsio_clinicians from "../assets/voxsio_clinicians.jpg";
 		</div>
 	</div>
 
-	<div class="projects relative w-full -mt-4 py-12 pl-[15vw]">
-		<div class="flex relative z-10">
-			<div class="w-[256px]">
-				<h1 class="font-semibold text-4xl text-black dark:text-white uppercase text-right">
-					Highlights
-				</h1>
-			</div>
+	<div class="projects relative w-full -mt-4 py-8">
+		<div class="relative md:max-w-6xl md:mx-auto px-4 md:px-8 flex flex-col md:flex-row z-10">
+			<h1 class="h-12 md:absolute top-32 -left-16 mb-4 md:mb-0 font-semibold text-4xl text-black dark:text-rock-100 uppercase md:-rotate-90">
+				Highlights
+			</h1>
 
-			<div class="ml-20 flex flex-wrap gap-12">
-				<a href="/designing-future-ai-schools" class="group block relative w-72 h-72">
+			<div class="flex flex-wrap gap-12 md:pl-16">
+				<a href="/designing-future-ai-schools" class="group block relative w-full md:w-72">
 					<div class="rounded-lg border-2 group-hover:border-3 border-black dark:border-stone-600 overflow-hidden">
 						<Image
-							width="2000"
-							class="w-full h-full group-hover:scale-110 transition"
+							width="1000"
+							class="aspect-video md:aspect-square object-cover group-hover:scale-110 transition"
 							src={iep}
-							alt=""
+							alt="Three children sitting around a table, one drawing a translation app on a tablet, another drawing it on paper, and the third is filling out a worksheet"
 						/>
 					</div>
-					<div class="absolute w-[105%] p-2 -left-[2.5%] bottom-6 z-10 bg-yellow-200 border dark:border-stone-600 rounded rotate-[-1deg] group-hover:rotate-0 transition font-medium text-black">
+					<div class="absolute w-[105%] p-2 -left-[2.5%] bottom-6 z-10 bg-yellow-200 border dark:border-stone-600 rounded rotate-[-1deg] group-hover:rotate-0 transition font-medium text-black text-lg md:text-base">
 						How Children Design the Future of AI in Primary Schools
 					</div>
 				</a>
 
-				<a href="https://designinformatics.org/portfolio-item/stepping-into-the-black-box-of-ai/" target="_blank" rel="noopener" class="group block relative w-72 h-72">
+				<a href="https://designinformatics.org/portfolio-item/stepping-into-the-black-box-of-ai/" target="_blank" rel="noopener" class="group block relative w-full md:w-72">
 					<div class="rounded-lg border-2 group-hover:border-3 border-black dark:border-stone-600 overflow-hidden">
 						<Image
-							width="2000"
-							height="2000"
-							class="w-full h-full group-hover:scale-110 transition"
+							width="1000"
+							height="1000"
+							class="aspect-video md:aspect-square object-cover group-hover:scale-110 transition"
 							src={sibb}
-							alt=""
+							alt="A few people standing around or in a large black box on stilts that has a few coloured post-its on its side"
 						/>
 					</div>
-					<div class="absolute w-[105%] p-2 -left-[2.5%] bottom-6 z-10 bg-green-200 border dark:border-stone-600 rounded rotate-[2deg] group-hover:rotate-0 transition font-medium text-black">
+					<div class="absolute w-[105%] p-2 -left-[2.5%] bottom-6 z-10 bg-green-200 border dark:border-stone-600 rounded rotate-[1deg] md:rotate-[2deg] group-hover:rotate-0 transition font-medium text-black text-lg md:text-base">
 						Stepping Into the Black Box of AI
 					</div>
 				</a>
 
-				<a href="https://voxsio.com" target="_blank" class="group block relative w-72 h-72">
+				<a href="https://voxsio.com" target="_blank" class="group block relative w-full md:w-72">
 					<div class="rounded-lg border-2 group-hover:border-3 border-black dark:border-stone-600 overflow-hidden">
 						<Image
-							width="2000"
-							class="w-full h-full group-hover:scale-110 transition"
+							width="1000"
+							class="aspect-video md:aspect-square object-cover group-hover:scale-110 transition"
 							src={voxsio_clinicians}
-							alt=""
+							alt="A drawing of a humanoid sunflower, Ubee, standing between three clinicians in lab coats"
 						/>
 					</div>
-					<div class="absolute w-[105%] p-2 -left-[2.5%] bottom-4 z-10 bg-sky-200 border dark:border-stone-600 rounded rotate-[-0.5deg] group-hover:rotate-0 transition font-medium text-black">
+					<div class="absolute w-[105%] p-2 -left-[2.5%] bottom-4 z-10 bg-sky-200 border dark:border-stone-600 rounded rotate-[-0.5deg] group-hover:rotate-0 transition font-medium text-black text-lg md:text-base">
 						Voxsio: building ethical digital health apps with NHS Grampian
 					</div>
 				</a>
@@ -176,27 +173,29 @@ import voxsio_clinicians from "../assets/voxsio_clinicians.jpg";
 		</div>
 	</div>
 
-	<div class="flex pt-12 pl-[15vw]">
-		<div class="w-[256px]">
-			<h1 class="font-semibold text-4xl text-black dark:text-white uppercase text-right">
+	<div class="md:max-w-6xl md:mx-auto pt-12 px-4 md:px-8 flex flex-col md:flex-row">
+		<div class="shrink-0 mb-16 md:mb-0 md:w-54 lg:w-3xs hyphens-auto">
+			<h1 class="font-semibold text-4xl dark:text-rock-100 uppercase md:text-right">
 				About
 			</h1>
-			<p class="text-sm text-justify">
-				I am a doctoral researcher at the <a href="https://responsiblenlp.org" target="_blank" rel="noopener">UKRI AI Centre for Doctoral Training in Designing Responsible Natural Language Processing</a> at the School of Informatics of the University of Edinburgh. I am supervised by <a href="https://homepages.inf.ed.ac.uk/fmcneill/" target="_blank" rel="noopener noreferrer">Prof Fiona McNeill</a>, <a href="https://www.de.ed.ac.uk/people/dr-cara-wilson" target="_blank" rel="noopener noreferrer">Dr Cara Wilson</a>, and <a href="https://www.de.ed.ac.uk/people/valentina-andries" target="_blank" rel="noopener noreferrer">Dr Valentina Andries</a> and affiliated with <a href="https://designinformatics.org" target="_blank" rel="noopener noreferrer">Design Informatics</a>, the <a href="https://efi.ed.ac.uk/ecosystem/children-interaction-and-design-cid/" target="_blank" rel="noopener noreferrer">Children, Interaction, and Design Research Cluster</a>, and the <a href="https://technomoralfutures.uk" target="_blank" rel="noopener noreferrer">Centre for Technomoral Futures</a>.
-			</p>
-			<p class="text-sm text-justify mt-4">
-				Before starting the PhD, I was the chief technology officer of <a href="https://voxsio.com" target="_blank" rel="noopener noreferrer">Voxsio</a>, building ethical and engaging digital health apps in partnership with NHS Grampian.
-			</p>
-			<p class="text-sm text-justify mt-4">
-				Outside of work, I am a duty mentor at <a href="https://prewired.org" target="_blank" rel="noopener noreferrer">Prewired</a>, a free Edinburgh coding club for under-19s, as well as the Projects Officer of our Board of Trustees. Among other things, I run our <a href="https://firstlegoleague.org" target="_blank" rel="noopener noreferrer">FIRST LEGO League</a> programme during the school year.
-			</p>
-			<p class="text-sm text-justify mt-4">
-				I'm originally from Eindhoven, the Netherlands; daar brandt nog licht.
-			</p>
+			<div class="md:text-sm text-justify">
+				<p class="">
+					I am a doctoral researcher at the <a href="https://responsiblenlp.org" target="_blank" rel="noopener">UKRI AI Centre for Doctoral Training in Designing Responsible Natural Language Processing</a> at the School of Informatics of the University of Edinburgh. I am supervised by <a href="https://homepages.inf.ed.ac.uk/fmcneill/" target="_blank" rel="noopener noreferrer">Prof Fiona McNeill</a>, <a href="https://www.de.ed.ac.uk/people/dr-cara-wilson" target="_blank" rel="noopener noreferrer">Dr Cara Wilson</a>, and <a href="https://www.de.ed.ac.uk/people/valentina-andries" target="_blank" rel="noopener noreferrer">Dr Valentina Andries</a> and affiliated with <a href="https://designinformatics.org" target="_blank" rel="noopener noreferrer">Design Informatics</a>, the <a href="https://efi.ed.ac.uk/ecosystem/children-interaction-and-design-cid/" target="_blank" rel="noopener noreferrer">Children, Interaction, and Design Research Cluster</a>, and the <a href="https://technomoralfutures.uk" target="_blank" rel="noopener noreferrer">Centre for Technomoral Futures</a>.
+				</p>
+				<p class="mt-4">
+					Before starting the PhD, I was the chief technology officer of <a href="https://voxsio.com" target="_blank" rel="noopener noreferrer">Voxsio</a>, building ethical and engaging digital health apps in partnership with NHS Grampian.
+				</p>
+				<p class="mt-4">
+					Outside of work, I am a duty mentor at <a href="https://prewired.org" target="_blank" rel="noopener noreferrer">Prewired</a>, a free Edinburgh coding club for under-19s, as well as the Projects Officer of our Board of Trustees. Among other things, I run our <a href="https://firstlegoleague.org" target="_blank" rel="noopener noreferrer">FIRST LEGO League</a> programme during the school year.
+				</p>
+				<p class="mt-4">
+					I'm originally from Eindhoven, the Netherlands; daar brandt nog licht.
+				</p>
+			</div>
 		</div>
 
-		<div class="relative ml-20 max-w-144">
-			<div class="absolute h-16 -top-16 left-6 border-l-3 border-indigo-500 -z-20" />
+		<div class="relative ml-12 xl:ml-20 max-w-144">
+			<div class="absolute h-8 md:h-16 -top-8 md:-top-16 left-6 border-l-3 border-indigo-500 border-dashed md:border-solid -z-20" />
 			<TimelineSegment emoji="🎤" date="5 June 2025" colour="indigo">
 				Participated in a panel discussion on participatory approaches in NLP at the <a href="https://www.responsiblenlp.org/partner-summit/" target="_blank" rel="noopener noreferrer">CDT Partner Summit</a>, together with colleagues Amanda Horzyk, Sarah Immel, and Kimberley Paradis.
 			</TimelineSegment>
