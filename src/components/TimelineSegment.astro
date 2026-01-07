@@ -14,8 +14,8 @@ const bg = `bg-${colour}-50 dark:bg-${colour}-950`;
 ---
 
 <div class={`flex mt-6 ml-6 pb-14 border-l-3 ${final ? "border-transparent" : border}`}>
-	<div class={`w-12 h-12 -ml-[25px] -mt-6 pt-1 border-3 ${border} rounded-full ${bg} text-center`}>
-		<span class="text-3xl select-none">{ emoji }</span>
+	<div class={`w-12 h-12 shrink-0 -ml-[25px] -mt-6 pt-1.5 border-3 ${border} rounded-full ${bg} text-center`}>
+		<span class="font-emoji text-2xl select-none">{ emoji }</span>
 	</div>
 	<div class="-mt-6 ml-4">
 		<small>{ date }</small>

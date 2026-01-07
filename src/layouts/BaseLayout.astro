@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import "@styles/global.css";
 import Analytics from "@vercel/analytics/astro";
 import SpeedInsights  from "@vercel/speed-insights/astro";
 
@@ -36,23 +36,26 @@ const { title, desc, image, imageAlt, bg } = Astro.props;
 				localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
 			);
 		</script>
+
+		<Analytics />
+		<SpeedInsights />
 	</head>
 	<body class={`relative ${bg === "rock" ? "bg-rock-100" : "bg-white"} dark:bg-rock-950 dark:text-rock-100 overflow-x-hidden`}>
-		<div class="absolute top-0 right-4 z-10 flex items-start gap-2 text-lg">
+		<div class="absolute top-4 right-0 md:top-0 md:right-4 z-10 flex flex-col md:flex-row items-start gap-2 text-lg">
 			<button
-				class="group px-1.5 pt-6 pb-1 bg-gray-500/5 border-[1.5px] border-t-0 border-gray-500 rounded-b-full cursor-pointer -translate-y-4 hover:translate-y-0 hover:border-dashed transition"
+				class="group font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-purple-500/5 border-[1.5px] border-r-0 md:border-r-[1.5px] md:border-t-0 border-purple-500 rounded-l-full md:rounded-l-none md:rounded-b-full cursor-pointer translate-x-4 hover:translate-x-0 md:translate-x-0! md:-translate-y-4 md:hover:translate-y-0 hover:border-dashed transition"
 				id="themeToggleLock" title="Follow system theme"
 			>
 				🔮
 			</button>
 			<button
-				class="group px-1.5 pt-6 pb-1 bg-orange-500/5 border-[1.5px] border-t-0 border-orange-500 rounded-b-full dark:cursor-pointer dark:-translate-y-4 dark:hover:translate-y-0 transition"
+				class="group font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-yellow-500/5 border-[1.5px] border-r-0 md:border-r-[1.5px] md:border-t-0 border-yellow-500 rounded-l-full md:rounded-l-none md:rounded-b-full dark:cursor-pointer dark:translate-x-4 dark:hover:translate-x-0 md:translate-x-0! md:dark:-translate-y-4 md:dark:hover:translate-y-0 transition"
 				id="themeToggleLight" title="Light theme"
 			>
 				☀️
 			</button>
 			<button
-				class="group px-1.5 pt-6 pb-1 bg-purple-500/5 border-[1.5px] border-t-0 border-purple-500 rounded-b-full cursor-pointer dark:cursor-auto -translate-y-4 dark:translate-y-0 hover:translate-y-0 transition"
+				class="group font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-slate-500/5 border-[1.5px] border-r-0 md:border-r-[1.5px] md:border-t-0 border-slate-500 rounded-l-full md:rounded-l-none md:rounded-b-full cursor-pointer dark:cursor-auto translate-x-4 dark:translate-x-0 hover:translate-x-0 md:translate-x-0! md:-translate-y-4 md:dark:translate-y-0 md:hover:translate-y-0 transition"
 				id="themeToggleDark" title="Dark theme"
 			>
 				🌑
@@ -94,8 +97,5 @@ const { title, desc, image, imageAlt, bg } = Astro.props;
 				toggleLight.disabled = false;
 			});
 		</script>
-
-		<Analytics />
-		<SpeedInsights />
 	</body>
 </html>
