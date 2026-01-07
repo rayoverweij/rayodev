@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-Regular.woff2") format("woff2");
+	src: url("/fonts/WorkSans-Regular.woff2") format(woff2);
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -10,7 +12,7 @@
 
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-Italic.woff2") format("woff2");
+	src: url("/fonts/WorkSans-Italic.woff2") format(woff2);
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -18,7 +20,7 @@
 
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-Medium.woff2") format("woff2");
+	src: url("/fonts/WorkSans-Medium.woff2") format(woff2);
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -26,7 +28,7 @@
 
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-MediumItalic.woff2") format("woff2");
+	src: url("/fonts/WorkSans-MediumItalic.woff2") format(woff2);
 	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
@@ -34,7 +36,7 @@
 
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-SemiBold.woff2") format("woff2");
+	src: url("/fonts/WorkSans-SemiBold.woff2") format(woff2);
 	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
@@ -42,7 +44,7 @@
 
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-SemiBoldItalic.woff2") format("woff2");
+	src: url("/fonts/WorkSans-SemiBoldItalic.woff2") format(woff2);
 	font-weight: 600;
 	font-style: italic;
 	font-display: swap;
@@ -50,7 +52,7 @@
 
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-Bold.woff2") format("woff2");
+	src: url("/fonts/WorkSans-Bold.woff2") format(woff2);
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -58,15 +60,35 @@
 
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-BoldItalic.woff2") format("woff2");
+	src: url("/fonts/WorkSans-BoldItalic.woff2") format(woff2);
 	font-weight: 700;
 	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Noto Color Emoji";
+	src: url("/fonts/NotoColorEmoji-Regular.ttf") format(truetype);
+	font-weight: 400;
+	font-style: normal;
 	font-display: swap;
 }
 
 @theme {
 	--font-sans: "Work Sans", sans-serif;
+	--font-emoji: "Noto Color Emoji";
 	--font-sans--font-feature-settings: "ss03", "ss05";
+
+	--color-rock-100: #F5F1EA;
+	--color-rock-200: #DDD9D3;
+	--color-rock-300: #C4C1BB;
+	--color-rock-400: #ACA9A4;
+	--color-rock-500: #93918C;
+	--color-rock-600: #7B7975;
+	--color-rock-700: #62605E;
+	--color-rock-800: #4A4846;
+	--color-rock-900: #31302F;
+	--color-rock-950: #191817;
 }
 
 @layer base {
@@ -85,18 +107,12 @@
 
 	html:has(.design-dialog[open]) { @apply bg-black/25; }
 
-	h2 {
-		@apply relative w-fit mt-20 mb-2 font-semibold text-[1.1rem] uppercase;
-	}
-
-	h2::after {
-		@apply block absolute w-[110%] h-[110%] -top-[5%] -left-[5%] -z-50 bg-yellow-200;
-		content: "";
-		transform: rotate(-1deg);
-	}
-
 	p, li {
 		@apply leading-relaxed;
+	}
+
+	strong {
+		@apply font-medium;
 	}
 
 	ul {
@@ -108,7 +124,7 @@
 	}
 
 	a {
-		@apply text-blue-700 underline underline-offset-4 hover:decoration-wavy hover:underline-offset-2 hover:decoration-1;
+		@apply text-blue-700 dark:text-blue-300 underline underline-offset-4 hover:decoration-wavy hover:underline-offset-2 hover:decoration-1;
 	}
 
 	strong {
@@ -119,4 +135,24 @@
 		@apply opacity-0 open:opacity-100 starting:open:opacity-0 transition-all transition-discrete duration-300;
 		@apply backdrop:bg-transparent open:backdrop:bg-black/25 starting:open:backdrop:bg-transparent backdrop:transition-all backdrop:transition-discrete backdrop:duration-300;
 	}
+}
+
+.mark {
+	@apply relative;
+}
+
+.mark::before {
+	@apply block absolute w-[105%] h-[110%] -top-[5%] -left-[2.5%] bg-yellow-200 -z-50;
+	content: "";
+	transform: rotate(-1deg);
+}
+
+.projects::before {
+	@apply block absolute w-[110%] h-[100%] top-0 -left-[5%] bg-white border-2;
+	content: "";
+	transform: rotate(-1deg);
+}
+
+html.dark .projects::before {
+	@apply bg-stone-950 border-stone-600;
 }
