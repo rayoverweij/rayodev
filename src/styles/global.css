@@ -97,7 +97,7 @@
 	}
 
 	html {
-		@apply transition duration-300;
+		@apply overflow-x-hidden transition duration-300;
 		scrollbar-gutter: stable;
 	}
 
@@ -107,12 +107,16 @@
 
 	html:has(.design-dialog[open]) { @apply bg-black/25; }
 
-	p, li {
-		@apply leading-relaxed;
+	p {
+		@apply mt-4 leading-relaxed;
 	}
 
 	strong {
 		@apply font-medium;
+	}
+
+	h1 {
+		@apply font-semibold text-3xl lg:text-4xl uppercase;
 	}
 
 	ul {
@@ -120,15 +124,11 @@
 	}
 
 	li {
-		@apply mb-6 pl-3;
+		@apply mb-6 pl-3 leading-relaxed;
 	}
 
 	a {
 		@apply text-blue-700 dark:text-blue-300 underline underline-offset-4 hover:decoration-wavy hover:underline-offset-2 hover:decoration-1;
-	}
-
-	strong {
-		@apply font-medium;
 	}
 
 	dialog {
@@ -148,7 +148,7 @@
 }
 
 .projects::before {
-	@apply block absolute w-[110%] h-[100%] top-0 -left-[5%] bg-white border-2;
+	@apply block absolute w-[110%] h-full top-0 -left-[5%] bg-white border-2;
 	content: "";
 	transform: rotate(-1deg);
 }
