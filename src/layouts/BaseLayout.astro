@@ -1,16 +1,23 @@
 ---
+import { getImage } from "astro:assets";
 import "@styles/global.css";
 
 
 interface Props {
 	title: string;
 	desc: string;
-	image: string;
-	imageAlt: string;
+	ogImageData: ImageMetadata;
+	ogImageAlt: string;
 	bg?: "white" | "rock";
 }
 
-const { title, desc, image, imageAlt, bg } = Astro.props;
+const { title, desc, ogImageData, ogImageAlt, bg } = Astro.props;
+
+// Get the URL for this page
+const { url } = Astro;
+
+// Get a static URL for this page's OG image
+const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.format })).src, url).href;
 ---
 
 <!DOCTYPE html>
@@ -18,17 +25,20 @@ const { title, desc, image, imageAlt, bg } = Astro.props;
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1" />
+		<link rel="icon" href="/favicon.ico" />
+		
+		<meta name="description" content={desc} />
+		<meta property="og:site_name" content="Rayo Verweij" />
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={desc} />
+		<meta property="og:locale" content="en_GB" />
+		<meta property="og:image" content={imgURL} />
+		<meta property="og:image:alt" content={ogImageAlt} />
 		
 		<title>{ title } | Rayo Verweij</title>
-		<meta name="description" content={desc} />
-		<meta property="og:title" content={title} />
-		<meta property="og:type" content="website" />
-		<meta property="og:image" content={image} />
-		<meta property="og:image:alt" content={imageAlt} />
-		<meta property="og:description" content={desc} />
 		
-		<link rel="icon" href="/favicon.ico" />
-
 		<script>
 			document.documentElement.classList.toggle("dark",
 				localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)

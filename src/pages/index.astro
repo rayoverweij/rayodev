@@ -3,6 +3,7 @@ import { Picture } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import A from "@components/A.astro";
 import TimelineSegment from "@components/TimelineSegment.astro";
+import banner from "@assets/banner.png";
 import profilepic from "@assets/rayo.jpg";
 import iep from "@assets/iep.webp";
 import sibb from "@assets/sibb.jpg";
@@ -42,8 +43,8 @@ const highlights = [
 <BaseLayout
 	title="Home"
 	desc="Rayo is a PhD researcher at the Centre for Doctoral Training in Designing Responsible Natural Language Processing at the University of Edinburgh."
-	image=""
-	imageAlt=""
+	ogImageData={banner}
+	ogImageAlt="Rayo Verweij: researcher, designer, developer. Working on young people's critical understanding of new technologies like AI through designing and building their own tools."
 	bg="rock"
 >
 	<div class="pt-8 md:pt-32 px-4 md:px-8 flex flex-col md:flex-row md:justify-center">
