@@ -96,6 +96,10 @@
 		@apply bg-black text-white;
 	}
 
+	html.dark ::selection {
+		@apply bg-white text-black;
+	}
+
 	html {
 		@apply overflow-x-hidden transition duration-300;
 		scrollbar-gutter: stable;
@@ -135,24 +139,22 @@
 		@apply opacity-0 open:opacity-100 starting:open:opacity-0 transition-all transition-discrete duration-300;
 		@apply backdrop:bg-transparent open:backdrop:bg-black/25 starting:open:backdrop:bg-transparent backdrop:transition-all backdrop:transition-discrete backdrop:duration-300;
 	}
-}
 
-.mark {
-	@apply relative;
-}
+	html.dark .hideWhenDark {
+		@apply hidden;
+	}
 
-.mark::before {
-	@apply block absolute w-[105%] h-[110%] -top-[5%] -left-[2.5%] bg-yellow-200 -z-50;
-	content: "";
-	transform: rotate(-1deg);
-}
-
-.projects::before {
-	@apply block absolute w-[110%] h-full top-0 -left-[5%] bg-white border-2;
-	content: "";
-	transform: rotate(-1deg);
-}
-
-html.dark .projects::before {
-	@apply bg-stone-950 border-stone-600;
+	html:not(.dark) .hideWhenLight {
+		@apply hidden;
+	}
+	
+	.projects::before {
+		@apply block absolute w-[110%] h-full top-0 -left-[5%] bg-white border-2;
+		content: "";
+		transform: rotate(-1deg);
+	}
+	
+	html.dark .projects::before {
+		@apply bg-stone-950 border-stone-600;
+	}
 }

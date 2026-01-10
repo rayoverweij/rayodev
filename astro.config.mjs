@@ -1,14 +1,19 @@
 import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
+import sitemap from "@astrojs/sitemap";
 import tunnel from "astro-tunnel";
+import tailwindcss from "@tailwindcss/vite";
 
 
 export default defineConfig({
-	integrations: [tunnel()],
+	site: "https://rayo.dev",
+
+	image: {
+		layout: "constrained"
+	},
+
+	integrations: [sitemap(), tunnel()],
+
 	vite: {
 		plugins: [tailwindcss()]
 	},
-	image: {
-		layout: "constrained"
-	}
 });
