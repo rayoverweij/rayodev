@@ -1,0 +1,96 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import A from "@components/A.astro";
+import banner from "@assets/infint.png";
+
+const bannerAlt = "An AI-generated image in the style of vintage adventure cover books of two children being sucked into a black box by what looks like a neural net";
+---
+
+<BaseLayout
+	title="Inference Interference"
+	desc="An interactive workshop exploring the internal systems of AI chatbots"
+	ogImageData={banner}
+	ogImageAlt={bannerAlt}
+	bg="rock"
+>
+	<div class="w-full max-w-screen-lg mx-auto pt-48 md:pt-24 px-4 md:px-8">
+		<a href="/" class="absolute top-4 md:top-8 left-4 md:left-8 p-2 bg-[#DA462722] dark:bg-[#DA4627BB] text-[#DA4627] dark:text-rock-100 rounded-lg no-underline hover:bg-[#DA462755] dark:hover:text-[#DA4627]">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="inline" viewBox="0 0 16 16">
+				<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+			</svg>
+			Home
+		</a>
+
+		<Image
+			src={banner}
+			alt={bannerAlt}
+			class="max-h-120 object-cover mx-auto border-2 border-black dark:border-rock-100 rounded-t-4xl rounded-b-lg"
+		/>
+		<p class="font-della uppercase text-lg md:text-xl text-center tracking-[0.5px]">
+			When you become one with the machine... will you like what you find?
+		</p>
+		<div class="w-full my-4 border-t-2 border-b-2 border-black dark:border-rock-100 pt-7 pb-9 text-center">
+			<h1 class="font-della font-normal text-4xl md:text-5xl lg:text-6xl text-[#DA4627] uppercase">
+				&ldquo;Inference interference"
+			</h1>
+		</div>
+		<div class="relative w-fit mx-auto mb-8 bg-rock-100 dark:bg-rock-950 px-3 py-2 -mt-10 lg:-mt-11 z-10">
+			<p class="w-fit mt-0 font-della text-lg md:text-xl lg:text-2xl uppercase">
+				By Rayo Verweij
+			</p>
+		</div>
+		<div class="flex flex-col md:flex-row gap-16">
+			<div class="md:w-3/5 text-justify">
+				<p class="block text-lg initial-letter mt-0">
+					<span class="font-della uppercase">&ldquo;Inference interference"</span> is a workshop that dives into the mysterious and obscure processes of how AI chatbots generate their responses. Through interactive exercises, participants themselves will become a part of the AI's text generation process, gaining an intuitive understanding of its workings in an experiential way.
+				</p>
+				<p>
+					The workshop is aimed at high school students in S2-S4. Rayo still has availability to run the workshop in schools throughout April and May 2026&mdash;contact him at rayo [dot] verweij [at] ed [dot] ac [dot] uk if interested.
+				</p>
+				<p>
+					This workshop is being run as part of research at the University of Edinburgh and has been approved by the School of Informatics Ethics Committee, reference #735546. The large language model used in this workshop runs on a local device. As such, no data is shared with third parties and the environmental impact of running the workshop is negligible, comparable to playing a video game on a high-end PC.
+				</p>
+				<p class="text-sm">
+					The cover image was generated using DALL-E 3. Can you find all the mistakes it made?
+				</p>
+			</div>
+			<div class="md:w-2/5 p-6 pt-2 bg-[#DA462722] dark:bg-[#DA462755] rounded-xl self-start">
+				<p class="font-medium">
+					Looking to participate in the workshop at Prewired on 11 March 2026? Here's how to join:
+				</p>
+				<ol>
+					<li>
+						<strong>Read</strong> through the participant information sheet for <A href="/docs/InferenceInterference_PIS_YP.pdf">participants</A> and their <A href="/docs/InferenceInterference_PIS_Parent.pdf">parents / guardians</A>
+					</li>
+					<li>
+						<strong>Sign and print</strong> the consent forms for <A href="/docs/InferenceInterference_Consent_YP.pdf">participants</A> and their <A href="/docs/InferenceInterference_Consent_Parent.pdf">parents / guardians</A>
+					</li>
+					<li>
+						<strong><A href="https://www.tickettailor.com/events/prewired/1223517">Book a spot</A></strong> at Prewired for 11 March 2026
+					</li>
+					<li>
+						<strong>Show up</strong> to CodeBase Edinburgh at 17:30 with both printed consent forms
+					</li>
+				</ol>
+				<p>
+					See you there!
+				</p>
+			</div>
+		</div>
+		<div class="my-48 text-center text-balance">
+			<p class="font-della text-2xl text-rock-800 dark:text-rock-300 uppercase">
+				The secrets of the black box will be revealed in due course.
+			</p>
+			<p>
+				(That is to say, I will upload the workshop materials for others to use after our initial run.)
+			</p>
+		</div>
+		<div class="mt-24 mb-8 py-4 border-y-1 border-black dark:border-rock-100">
+			<p class="font-della uppercase text-sm text-center mt-0">
+				&copy; Rayo Verweij 2026.<br />
+				This research was funded by the <span class="text-orange-600">UKRI AI Centre for Doctoral Training</span> in <span class="text-purple-600 dark:text-purple-400">Responsible and Trustworthy in-the-world Natural Language Processing</span> at the <span class="text-blue-600 dark:text-blue-400">University of Edinburgh</span> (grant ref: EP/Y030656/1).
+			</p>
+		</div>
+	</div>
+</BaseLayout>

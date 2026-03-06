@@ -74,10 +74,19 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: "Della Respira";
+	src: url("/fonts/DellaRespira-Regular.woff2") format(woff2);
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
 @theme {
 	--font-sans: "Work Sans", sans-serif;
-	--font-emoji: "Noto Color Emoji";
 	--font-sans--font-feature-settings: "ss03", "ss05";
+	--font-emoji: "Noto Color Emoji";
+	--font-della: "Della Respira", serif;
 
 	--color-rock-100: #F5F1EA;
 	--color-rock-200: #DDD9D3;
@@ -127,6 +136,10 @@
 		@apply mt-4 pl-6;
 	}
 
+	ol {
+		@apply list-decimal mt-4 pl-6;
+	}
+
 	li {
 		@apply mb-6 pl-3 leading-relaxed;
 	}
@@ -156,5 +169,11 @@
 	
 	html.dark .projects::before {
 		@apply bg-stone-950 border-stone-600;
+	}
+
+	.initial-letter::first-letter {
+		@apply mr-4;
+		-webkit-initial-letter: 3;
+		initial-letter: 3;
 	}
 }
