@@ -4,24 +4,16 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import A from "@components/A.astro";
 import banner from "@assets/infint.png";
 
-const bannerAlt = "An AI-generated image in the style of vintage adventure cover books of two children being sucked into a black box by what looks like a neural net";
+const bannerAlt = "An AI-generated image in the style of vintage adventure book covers of two children being sucked into a black box by what looks like a neural net";
 ---
 
 <BaseLayout
-	title="Inference Interference"
+	title="“INFERENCE INTERFERENCE”"
 	desc="An interactive workshop exploring the internal systems of AI chatbots"
 	ogImageData={banner}
 	ogImageAlt={bannerAlt}
-	bg="rock"
 >
-	<div class="w-full max-w-screen-lg mx-auto pt-48 md:pt-24 px-4 md:px-8">
-		<a href="/" class="absolute top-4 md:top-8 left-4 md:left-8 p-2 bg-[#DA462722] dark:bg-[#DA4627BB] text-[#DA4627] dark:text-rock-100 rounded-lg no-underline hover:bg-[#DA462755] dark:hover:text-[#DA4627]">
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="inline" viewBox="0 0 16 16">
-				<path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
-			</svg>
-			Home
-		</a>
-
+	<div class="w-full max-w-5xl mx-auto pt-24 px-4 md:px-0">
 		<Image
 			src={banner}
 			alt={bannerAlt}
@@ -41,7 +33,7 @@ const bannerAlt = "An AI-generated image in the style of vintage adventure cover
 			</p>
 		</div>
 		<div class="flex flex-col md:flex-row gap-16">
-			<div class="md:w-3/5 md:text-justify">
+			<div class="md:w-3/5 text-justify">
 				<p class="block text-lg initial-letter mt-0">
 					<span class="font-della uppercase">&ldquo;Inference interference"</span> is a workshop that dives into the mysterious and obscure processes of how AI chatbots generate their responses. Through interactive exercises, participants themselves will become a part of the AI's text generation process, gaining an intuitive understanding of its workings in an experiential way.
 				</p>
@@ -86,10 +78,10 @@ const bannerAlt = "An AI-generated image in the style of vintage adventure cover
 				(That is to say, I will upload the workshop materials for others to use after our initial run.)
 			</p>
 		</div>
-		<div class="mt-24 mb-8 py-4 border-y-1 border-black dark:border-rock-100">
+		<div class="mt-24 mb-8 py-4 border-y border-black dark:border-rock-100">
 			<p class="font-della uppercase text-sm text-center mt-0">
 				&copy; Rayo Verweij 2026.<br />
-				This research was funded by the <span class="text-orange-600">UKRI AI Centre for Doctoral Training</span> in <span class="text-purple-600 dark:text-purple-400">Responsible and Trustworthy in-the-world Natural Language Processing</span> at the <span class="text-blue-600 dark:text-blue-400">University of Edinburgh</span> (grant ref: EP/Y030656/1).
+				This research was funded by the <span class="text-orange-600">UKRI AI Centre for Doctoral Training</span> in <span class="text-purple-600 dark:text-purple-400">Designing Responsible and Trustworthy in-the-world Natural Language Processing</span> at the <span class="text-blue-600 dark:text-blue-400">University of Edinburgh</span> (grant ref: EP/Y030656/1).
 			</p>
 		</div>
 	</div>

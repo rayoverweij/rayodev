@@ -4,64 +4,16 @@
 
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-Regular.woff2") format(woff2);
-	font-weight: 400;
+	src: url("/fonts/WorkSans-Regular-Variable.woff2") format("woff2-variations");
+	font-weight: 100 900;
 	font-style: normal;
 	font-display: swap;
 }
 
 @font-face {
 	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-Italic.woff2") format(woff2);
-	font-weight: 400;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-Medium.woff2") format(woff2);
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-MediumItalic.woff2") format(woff2);
-	font-weight: 500;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-SemiBold.woff2") format(woff2);
-	font-weight: 600;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-SemiBoldItalic.woff2") format(woff2);
-	font-weight: 600;
-	font-style: italic;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-Bold.woff2") format(woff2);
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-
-@font-face {
-	font-family: "Work Sans";
-	src: url("/fonts/WorkSans-BoldItalic.woff2") format(woff2);
-	font-weight: 700;
+	src: url("/fonts/WorkSans-Italic-Variable.woff2") format("woff2-variations");
+	font-weight: 100 900;
 	font-style: italic;
 	font-display: swap;
 }
@@ -98,6 +50,8 @@
 	--color-rock-800: #4A4846;
 	--color-rock-900: #31302F;
 	--color-rock-950: #191817;
+
+	--shadow-light: 1px 1px 0 black;
 }
 
 @layer base {
@@ -159,16 +113,6 @@
 
 	html:not(.dark) .hideWhenLight {
 		@apply hidden;
-	}
-	
-	.projects::before {
-		@apply block absolute w-[110%] h-full top-0 -left-[5%] bg-white border-2;
-		content: "";
-		transform: rotate(-1deg);
-	}
-	
-	html.dark .projects::before {
-		@apply bg-stone-950 border-stone-600;
 	}
 
 	.initial-letter::first-letter {

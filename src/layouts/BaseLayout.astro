@@ -8,10 +8,9 @@ interface Props {
 	desc: string;
 	ogImageData: ImageMetadata;
 	ogImageAlt: string;
-	bg?: "white" | "rock";
 }
 
-const { title, desc, ogImageData, ogImageAlt, bg } = Astro.props;
+const { title, desc, ogImageData, ogImageAlt } = Astro.props;
 
 // Get the URL for this page
 const { url } = Astro;
@@ -28,7 +27,7 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
-		
+
 		<meta name="description" content={desc} />
 		<meta property="og:site_name" content="Rayo Verweij" />
 		<meta property="og:url" content={url} />
@@ -38,32 +37,78 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 		<meta property="og:locale" content="en_GB" />
 		<meta property="og:image" content={imgURL} />
 		<meta property="og:image:alt" content={ogImageAlt} />
-		
+
 		<title>{ title } | Rayo Verweij</title>
-		
+
 		<script>
 			document.documentElement.classList.toggle("dark",
 				localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
 			);
 		</script>
 	</head>
-	<body class={`relative ${bg === "rock" ? "bg-rock-100" : "bg-white"} dark:bg-rock-950 dark:text-rock-100 overflow-x-hidden`}>
-		<div class="absolute top-4 right-0 md:top-0 md:right-4 z-10 flex flex-col md:flex-row items-start gap-2 text-lg">
+	<body class="relative bg-rock-100 dark:bg-rock-950 dark:text-rock-100 overflow-x-hidden">
+		<header id="navMenu" class="group fixed top-4 left-4 data-open:top-2 data-open:left-2 w-12 h-12 max-w-100 data-open:w-[calc(100%-1rem)] data-open:h-[80vh] data-open:md:h-[calc(100vh-1rem)] rounded-3xl bg-white dark:bg-stone-950 border dark:border-rock-600 shadow-light z-20 overflow-hidden transition-all flex flex-col">
 			<button
-				class="group font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-red-500/5 border-[1.5px] border-r-0 md:border-r-[1.5px] md:border-t-0 border-red-500 rounded-l-full md:rounded-l-none md:rounded-b-full cursor-pointer translate-x-4 hover:translate-x-0 md:translate-x-0! md:-translate-y-4 md:hover:translate-y-0 hover:border-dashed transition"
-				id="themeToggleAuto" title="Follow system theme"
+				id="navMenuButton"
+				class="group/navButton w-12 h-12 shrink-0 rounded-full flex items-center justify-center cursor-pointer transition group-data-open:translate-2 hover:bg-stone-200 dark:hover:bg-stone-800"
+			>
+				<div class="w-6 aspect-15/12 shrink-0 flex flex-col justify-between *:block *:h-0.75 *:rounded-full *:bg-black *:dark:bg-white *:group-data-open:group-hover/navButton:bg-red-600 *:transition">
+					<span class="group-data-open:translate-y-2 group-data-open:rotate-45" />
+					<span class="group-data-open:opacity-0" />
+					<span class="group-data-open:-translate-y-2 group-data-open:-rotate-45" />
+				</div>
+			</button>
+			<nav class="p-8 pb-16 flex flex-col gap-4 *:opacity-0 *:group-data-open:opacity-100 *:transition">
+				<a href="/" class={`font-semibold text-3xl text-black dark:text-white uppercase decoration-pink-500 ${url.pathname === "/" ? "pointer-events-none" : "no-underline hover:underline"}`}>
+					Home
+				</a>
+				<span class="font-semibold text-3xl text-rock-500 uppercase delay-100">
+					Projects
+				</span>
+				<a href="/inference-interference" class={`ml-4 font-semibold text-lg text-black dark:text-white uppercase decoration-[#DA4627] delay-200 ${url.pathname === "/inference-interference" ? "pointer-events-none" : "no-underline hover:underline"}`}>
+					"Inference Interference"
+				</a>
+				<a href="/designing-future-ai-schools" class={`ml-4 font-semibold text-lg text-black dark:text-white uppercase decoration-green-600 delay-300 ${url.pathname === "/designing-future-ai-schools" ? "pointer-events-none" : "no-underline hover:underline"}`}>
+					How Children Design the Future of AI for Primary School
+				</a>
+			</nav>
+			<div class="mt-auto hidden max-md:group-data-open:flex flex-col items-end gap-3 pb-4">
+				<button
+					class="themeToggleAuto font-emoji py-1.5 pl-1 pr-12 bg-red-500/5 border border-r-0 border-red-500 rounded-l-full cursor-pointer translate-x-4 hover:translate-x-0 hover:border-dashed transition"
+					title="Follow system theme"
+				>
+					⏰
+				</button>
+				<button
+					class="themeToggleLight font-emoji py-1.5 pl-1 pr-12 bg-yellow-500/5 border border-r-0 border-yellow-500 rounded-l-full dark:cursor-pointer dark:translate-x-4 dark:hover:translate-x-0 transition"
+					title="Light theme"
+				>
+					<span class="hideWhenLight">☀️</span><span class="hideWhenDark">🌞</span>
+				</button>
+				<button
+					class="themeToggleDark font-emoji py-1.5 pl-1 pr-12 bg-slate-500/5 border border-r-0 border-slate-500 rounded-l-full cursor-pointer dark:cursor-auto translate-x-4 dark:translate-x-0 hover:translate-x-0 transition"
+					title="Dark theme"
+				>
+					<span class="hideWhenDark">🌑</span><span class="hideWhenLight">🌚</span>
+				</button>
+			</div>
+		</header>
+		<div class="hidden md:flex absolute top-4 right-0 md:top-0 md:right-4 z-10 flex-col md:flex-row items-start gap-2 text-lg">
+			<button
+				class="themeToggleAuto font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-red-500/5 border border-r-0 md:border-r md:border-t-0 border-red-500 rounded-l-full md:rounded-l-none md:rounded-b-full cursor-pointer translate-x-4 hover:translate-x-0 md:translate-x-0! md:-translate-y-4 md:hover:translate-y-0 hover:border-dashed transition"
+				title="Follow system theme"
 			>
 				⏰
 			</button>
 			<button
-				class="group font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-yellow-500/5 border-[1.5px] border-r-0 md:border-r-[1.5px] md:border-t-0 border-yellow-500 rounded-l-full md:rounded-l-none md:rounded-b-full dark:cursor-pointer dark:translate-x-4 dark:hover:translate-x-0 md:translate-x-0! md:dark:-translate-y-4 md:dark:hover:translate-y-0 transition"
-				id="themeToggleLight" title="Light theme"
+				class="themeToggleLight font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-yellow-500/5 border border-r-0 md:border-r md:border-t-0 border-yellow-500 rounded-l-full md:rounded-l-none md:rounded-b-full dark:cursor-pointer dark:translate-x-4 dark:hover:translate-x-0 md:translate-x-0! md:dark:-translate-y-4 md:dark:hover:translate-y-0 transition"
+				title="Light theme"
 			>
 				<span class="hideWhenLight">☀️</span><span class="hideWhenDark">🌞</span>
 			</button>
 			<button
-				class="group font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-slate-500/5 border-[1.5px] border-r-0 md:border-r-[1.5px] md:border-t-0 border-slate-500 rounded-l-full md:rounded-l-none md:rounded-b-full cursor-pointer dark:cursor-auto translate-x-4 dark:translate-x-0 hover:translate-x-0 md:translate-x-0! md:-translate-y-4 md:dark:translate-y-0 md:hover:translate-y-0 transition"
-				id="themeToggleDark" title="Dark theme"
+				class="themeToggleDark font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-slate-500/5 border border-r-0 md:border-r md:border-t-0 border-slate-500 rounded-l-full md:rounded-l-none md:rounded-b-full cursor-pointer dark:cursor-auto translate-x-4 dark:translate-x-0 hover:translate-x-0 md:translate-x-0! md:-translate-y-4 md:dark:translate-y-0 md:hover:translate-y-0 transition"
+				title="Dark theme"
 			>
 				<span class="hideWhenDark">🌑</span><span class="hideWhenLight">🌚</span>
 			</button>
@@ -72,32 +117,48 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 		<slot />
 
 		<script>
-			const toggleAuto = document.getElementById("themeToggleAuto") as HTMLButtonElement;
-			const toggleLight = document.getElementById("themeToggleLight") as HTMLButtonElement;
-			const toggleDark = document.getElementById("themeToggleDark") as HTMLButtonElement;
-			
-			if(!("theme" in localStorage)) toggleAuto.classList.add("hidden");
-			
-			toggleAuto.addEventListener("click", () => {
-				localStorage.removeItem("theme");
-				document.documentElement.classList.toggle("dark", window.matchMedia("(prefers-color-scheme: dark)").matches);
-				toggleAuto.classList.add("hidden");
+			// Navigation menu
+			const navMenu = document.getElementById("navMenu") as HTMLDivElement;
+			const navMenuButton = document.getElementById("navMenuButton") as HTMLButtonElement;
+			navMenuButton.addEventListener("click", () => {
+				navMenu.hasAttribute("data-open") ? navMenu.removeAttribute("data-open") : navMenu.setAttribute("data-open", "");
 			});
 
-			toggleLight.addEventListener("click", () => {
-				const rootClassList = document.documentElement.classList;
-				if(!rootClassList.contains("dark")) return;
-				localStorage.theme = "light";
-				rootClassList.remove("dark");
-				toggleAuto.classList.remove("hidden");
+			// Light/dark buttons
+			const togglesAuto = Array.from(document.getElementsByClassName("themeToggleAuto") as HTMLCollectionOf<HTMLButtonElement>);
+			const togglesLight = Array.from(document.getElementsByClassName("themeToggleLight") as HTMLCollectionOf<HTMLButtonElement>);
+			const togglesDark = Array.from(document.getElementsByClassName("themeToggleDark") as HTMLCollectionOf<HTMLButtonElement>);
+
+			if(!("theme" in localStorage)) {
+				togglesAuto.forEach(toggle => toggle.classList.add("hidden"));
+			}
+
+			togglesAuto.forEach(toggle => {
+				toggle.addEventListener("click", () => {
+					localStorage.removeItem("theme");
+					document.documentElement.classList.toggle("dark", window.matchMedia("(prefers-color-scheme: dark)").matches);
+					togglesAuto.forEach(toggle => toggle.classList.add("hidden"));
+				});
 			});
 
-			toggleDark.addEventListener("click", () => {
-				const rootClassList = document.documentElement.classList;
-				if(rootClassList.contains("dark")) return;
-				localStorage.theme = "dark";
-				rootClassList.add("dark");
-				toggleAuto.classList.remove("hidden");
+			togglesLight.forEach(toggle => {
+				toggle.addEventListener("click", () => {
+					const rootClassList = document.documentElement.classList;
+					if(!rootClassList.contains("dark")) return;
+					localStorage.theme = "light";
+					rootClassList.remove("dark");
+					togglesAuto.forEach(toggle => toggle.classList.remove("hidden"));
+				});
+			});
+
+			togglesDark.forEach(toggle => {
+				toggle.addEventListener("click", () => {
+					const rootClassList = document.documentElement.classList;
+					if(rootClassList.contains("dark")) return;
+					localStorage.theme = "dark";
+					rootClassList.add("dark");
+					togglesAuto.forEach(toggle => toggle.classList.remove("hidden"));
+				});
 			});
 		</script>
 	</body>

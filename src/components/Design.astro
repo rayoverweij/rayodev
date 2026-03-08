@@ -28,18 +28,19 @@ const {id, files, name, types, desc} = Astro.props;
 			<Image
 				src={files[0]}
 				alt={desc}
+				class="border"
 			/>
 		}
 	</button>
 	
 	<dialog
-		class="design-dialog w-7xl max-w-[95vw] mx-auto mt-[10vh] border rounded-sm shadow-lg overflow-hidden scale-95 open:scale-100 starting:open:scale-95"
+		class="design-dialog w-7xl max-w-[95vw] mx-auto mt-[10vh] dark:bg-black border rounded-sm shadow-lg overflow-hidden scale-95 open:scale-100 starting:open:scale-95 dark:text-rock-100"
 		id={`design-dialog-${id}`}
 	>
 		<div class="max-h-[80vh] flex flex-col md:flex-row overflow-y-auto md:overflow-y-visible">
 			<DialogCloseButton
 				id={`tickets-dialog-close-btn-${id}`}
-				style="absolute top-5 right-5 bg-white"
+				style="absolute top-5 right-5 bg-white dark:bg-black"
 			/>
 
 			<div class="p-8 md:w-2/5">
