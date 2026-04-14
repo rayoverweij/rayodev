@@ -4,7 +4,7 @@ import "@styles/global.css";
 
 
 interface Props {
-	title: string;
+	title?: string;
 	desc: string;
 	ogImageData: ImageMetadata;
 	ogImageAlt: string;
@@ -25,20 +25,20 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1" />
 
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 
 		<meta name="description" content={desc} />
 		<meta property="og:site_name" content="Rayo Verweij" />
 		<meta property="og:url" content={url} />
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content={title} />
+		<meta property="og:title" content={title ?? "Rayo Verweij"} />
 		<meta property="og:description" content={desc} />
 		<meta property="og:locale" content="en_GB" />
 		<meta property="og:image" content={imgURL} />
 		<meta property="og:image:alt" content={ogImageAlt} />
 
-		<title>{ title } | Rayo Verweij</title>
+		<title>{ title ? `${title} | Rayo Verweeij` : "Rayo Verweij" }</title>
 
 		<script>
 			document.documentElement.classList.toggle("dark",
