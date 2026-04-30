@@ -21,8 +21,12 @@ const {id, files, name, types, desc} = Astro.props;
 
 <design-card data-id={id}>
 	<button
+		type="button"
 		class="design w-80 p-3 hover:scale-105 active:scale-95 transition cursor-pointer"
 		id={`design-button-${id}`}
+		aria-haspopup="dialog"
+		aria-controls={`design-dialog-${id}`}
+		aria-label={`Open design details for ${name}`}
 	>
 		{ files[0] &&
 			<Image
@@ -36,6 +40,7 @@ const {id, files, name, types, desc} = Astro.props;
 	<dialog
 		class="design-dialog w-7xl max-w-[95vw] mx-auto mt-[10vh] dark:bg-black border rounded-sm shadow-lg overflow-hidden scale-95 open:scale-100 starting:open:scale-95 dark:text-rock-100"
 		id={`design-dialog-${id}`}
+		aria-labelledby={`design-dialog-title-${id}`}
 	>
 		<div class="max-h-[80vh] flex flex-col md:flex-row overflow-y-auto md:overflow-y-visible">
 			<DialogCloseButton
@@ -44,9 +49,9 @@ const {id, files, name, types, desc} = Astro.props;
 			/>
 
 			<div class="p-8 md:w-2/5">
-				<h1 class="mb-2 text-2xl font-semibold">
+				<h2 id={`design-dialog-title-${id}`} class="mb-2 text-2xl font-semibold">
 					{ name }
-				</h1>
+				</h2>
 				<div class="flex mb-4 gap-2">
 					{ types.map(type => (
 						<div class="px-3 py-1 border rounded-full">

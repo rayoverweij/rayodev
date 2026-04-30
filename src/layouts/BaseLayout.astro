@@ -47,9 +47,19 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 		</script>
 	</head>
 	<body class="relative bg-rock-100 dark:bg-rock-950 dark:text-rock-100 overflow-x-hidden">
+		<a
+			href="#main-content"
+			class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2 focus:text-black focus:outline-2 focus:outline-offset-2 focus:outline-black"
+		>
+			Skip to main content
+		</a>
 		<header id="navMenu" class="group fixed top-4 left-4 data-open:top-2 data-open:left-2 w-12 h-12 max-w-100 data-open:w-[calc(100%-1rem)] data-open:h-[80vh] data-open:md:h-[calc(100vh-1rem)] rounded-3xl bg-white dark:bg-stone-950 border dark:border-rock-600 shadow-light z-20 overflow-hidden transition-all flex flex-col">
 			<button
 				id="navMenuButton"
+				type="button"
+				aria-label="Open navigation menu"
+				aria-expanded="false"
+				aria-controls="navMenuContent"
 				class="group/navButton w-12 h-12 shrink-0 rounded-full flex items-center justify-center cursor-pointer transition group-data-open:translate-2 hover:bg-stone-200 dark:hover:bg-stone-800"
 			>
 				<div class="w-6 aspect-15/12 shrink-0 flex flex-col justify-between *:block *:h-0.75 *:rounded-full *:bg-black *:dark:bg-white *:group-data-open:group-hover/navButton:bg-red-600 *:transition">
@@ -58,7 +68,12 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 					<span class="group-data-open:-translate-y-2 group-data-open:-rotate-45" />
 				</div>
 			</button>
-			<nav class="p-8 pb-16 flex flex-col gap-4 *:opacity-0 *:group-data-open:opacity-100 *:transition">
+			<nav
+				id="navMenuContent"
+				aria-hidden="true"
+				inert
+				class="p-8 pb-16 flex flex-col gap-4 *:opacity-0 *:group-data-open:opacity-100 *:transition"
+			>
 				<a href="/" class={`font-semibold text-3xl text-black dark:text-white uppercase decoration-pink-500 ${url.pathname === "/" ? "pointer-events-none" : "no-underline hover:underline"}`}>
 					Home
 				</a>
@@ -74,18 +89,27 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 			</nav>
 			<div class="mt-auto hidden max-md:group-data-open:flex flex-col items-end gap-3 pb-4">
 				<button
+					type="button"
+					aria-label="Use system theme"
+					aria-pressed="false"
 					class="themeToggleAuto font-emoji py-1.5 pl-1 pr-12 bg-red-500/5 border border-r-0 border-red-500 rounded-l-full cursor-pointer translate-x-4 hover:translate-x-0 hover:border-dashed transition"
-					title="Follow system theme"
+					title="Use system theme"
 				>
 					⏰
 				</button>
 				<button
+					type="button"
+					aria-label="Switch to light theme"
+					aria-pressed="false"
 					class="themeToggleLight font-emoji py-1.5 pl-1 pr-12 bg-yellow-500/5 border border-r-0 border-yellow-500 rounded-l-full dark:cursor-pointer dark:translate-x-4 dark:hover:translate-x-0 transition"
 					title="Light theme"
 				>
 					<span class="hideWhenLight">☀️</span><span class="hideWhenDark">🌞</span>
 				</button>
 				<button
+					type="button"
+					aria-label="Switch to dark theme"
+					aria-pressed="false"
 					class="themeToggleDark font-emoji py-1.5 pl-1 pr-12 bg-slate-500/5 border border-r-0 border-slate-500 rounded-l-full cursor-pointer dark:cursor-auto translate-x-4 dark:translate-x-0 hover:translate-x-0 transition"
 					title="Dark theme"
 				>
@@ -95,18 +119,27 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 		</header>
 		<div class="hidden md:flex absolute top-4 right-0 md:top-0 md:right-4 z-10 flex-col md:flex-row items-start gap-2 text-lg">
 			<button
+				type="button"
+				aria-label="Use system theme"
+				aria-pressed="false"
 				class="themeToggleAuto font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-red-500/5 border border-r-0 md:border-r md:border-t-0 border-red-500 rounded-l-full md:rounded-l-none md:rounded-b-full cursor-pointer translate-x-4 hover:translate-x-0 md:translate-x-0! md:-translate-y-4 md:hover:translate-y-0 hover:border-dashed transition"
-				title="Follow system theme"
+				title="Use system theme"
 			>
 				⏰
 			</button>
 			<button
+				type="button"
+				aria-label="Switch to light theme"
+				aria-pressed="false"
 				class="themeToggleLight font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-yellow-500/5 border border-r-0 md:border-r md:border-t-0 border-yellow-500 rounded-l-full md:rounded-l-none md:rounded-b-full dark:cursor-pointer dark:translate-x-4 dark:hover:translate-x-0 md:translate-x-0! md:dark:-translate-y-4 md:dark:hover:translate-y-0 transition"
 				title="Light theme"
 			>
 				<span class="hideWhenLight">☀️</span><span class="hideWhenDark">🌞</span>
 			</button>
 			<button
+				type="button"
+				aria-label="Switch to dark theme"
+				aria-pressed="false"
 				class="themeToggleDark font-emoji py-1.5 pl-1 pr-8 md:px-1.5 md:pt-6 md:pb-1 bg-slate-500/5 border border-r-0 md:border-r md:border-t-0 border-slate-500 rounded-l-full md:rounded-l-none md:rounded-b-full cursor-pointer dark:cursor-auto translate-x-4 dark:translate-x-0 hover:translate-x-0 md:translate-x-0! md:-translate-y-4 md:dark:translate-y-0 md:hover:translate-y-0 transition"
 				title="Dark theme"
 			>
@@ -120,14 +153,37 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 			// Navigation menu
 			const navMenu = document.getElementById("navMenu") as HTMLDivElement;
 			const navMenuButton = document.getElementById("navMenuButton") as HTMLButtonElement;
+			const navMenuContent = document.getElementById("navMenuContent") as HTMLElement;
+
 			navMenuButton.addEventListener("click", () => {
-				navMenu.hasAttribute("data-open") ? navMenu.removeAttribute("data-open") : navMenu.setAttribute("data-open", "");
+				if(navMenu.hasAttribute("data-open")) {
+					navMenu.removeAttribute("data-open");
+					navMenuButton.setAttribute("aria-expanded", "false");
+					navMenuButton.setAttribute("aria-label", "Open navigation menu");
+					navMenuContent.setAttribute("aria-hidden", "true");
+					navMenuContent.setAttribute("inert", "");
+				} else {
+					navMenu.setAttribute("data-open", "");
+					navMenuButton.setAttribute("aria-expanded", "true");
+					navMenuButton.setAttribute("aria-label", "Close navigation menu");
+					navMenuContent.setAttribute("aria-hidden", "false");
+					navMenuContent.removeAttribute("inert");
+				}
 			});
 
 			// Light/dark buttons
 			const togglesAuto = Array.from(document.getElementsByClassName("themeToggleAuto") as HTMLCollectionOf<HTMLButtonElement>);
 			const togglesLight = Array.from(document.getElementsByClassName("themeToggleLight") as HTMLCollectionOf<HTMLButtonElement>);
 			const togglesDark = Array.from(document.getElementsByClassName("themeToggleDark") as HTMLCollectionOf<HTMLButtonElement>);
+
+			const syncThemeAriaPressed = () => {
+				const hasStoredTheme = "theme" in localStorage;
+				const isDark = document.documentElement.classList.contains("dark");
+				togglesAuto.forEach(toggle => toggle.setAttribute("aria-pressed", (!hasStoredTheme).toString()));
+				togglesLight.forEach(toggle => toggle.setAttribute("aria-pressed", (hasStoredTheme && !isDark).toString()));
+				togglesDark.forEach(toggle => toggle.setAttribute("aria-pressed", (hasStoredTheme && isDark).toString()));
+			};
+			syncThemeAriaPressed();
 
 			if(!("theme" in localStorage)) {
 				togglesAuto.forEach(toggle => toggle.classList.add("hidden"));
@@ -138,6 +194,7 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 					localStorage.removeItem("theme");
 					document.documentElement.classList.toggle("dark", window.matchMedia("(prefers-color-scheme: dark)").matches);
 					togglesAuto.forEach(toggle => toggle.classList.add("hidden"));
+					syncThemeAriaPressed();
 				});
 			});
 
@@ -148,6 +205,7 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 					localStorage.theme = "light";
 					rootClassList.remove("dark");
 					togglesAuto.forEach(toggle => toggle.classList.remove("hidden"));
+					syncThemeAriaPressed();
 				});
 			});
 
@@ -158,6 +216,7 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 					localStorage.theme = "dark";
 					rootClassList.add("dark");
 					togglesAuto.forEach(toggle => toggle.classList.remove("hidden"));
+					syncThemeAriaPressed();
 				});
 			});
 		</script>

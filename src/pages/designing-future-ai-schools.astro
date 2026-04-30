@@ -13,7 +13,7 @@ import iep3 from "@assets/iep-3.webp";
 	ogImageData={iep2}
 	ogImageAlt="Four participants sitting around a table, photographed from above, creating drawings and filling out worksheets"
 >
-	<div>
+	<main id="main-content">
 		<div class="relative mb-20 pt-24 px-4 md:px-8 flex flex-col-reverse md:flex-row md:items-center md:justify-center gap-x-4">
 			<div class="w-full mt-8 md:w-125 md:mr-24 md:mt-0">
 				<h1 class="text-3xl mb-4 normal-case">
@@ -55,60 +55,58 @@ import iep3 from "@assets/iep-3.webp";
 			</div>
 		</div>
 
-		<main>
-			<section class="max-w-7xl mx-auto px-8 py-12 bg-green-100 dark:bg-green-950 border-y-2 xl:border-x-2 border-green-900 xl:rounded-xl text-center">
-				<h3 class="w-full mt-0 mb-8 font-semibold text-[1.1rem] uppercase">
-					By the numbers...
-				</h3>
-				<div class="flex flex-wrap justify-evenly mb-8">
-					<div class="w-32">
-						<span class="font-medium text-3xl">
-							175
-						</span>
-						<br />
-						<span class="text-xl">
-							participants
-						</span>
-					</div>
-					<div class="w-32">
-						<span class="font-medium text-3xl">
-							45
-						</span>
-						<br />
-						<span class="text-xl">
-							teams
-						</span>
-					</div>
-					<div class="w-32">
-						<span class="font-medium text-3xl">
-							92
-						</span>
-						<br />
-						<span class="text-xl">
-							designs
-						</span>
-					</div>
+		<section class="max-w-7xl mx-auto px-8 py-12 bg-green-100 dark:bg-green-950 border-y-2 xl:border-x-2 border-green-900 xl:rounded-xl text-center">
+			<h2 class="w-full mt-0 mb-8 font-semibold text-[1.1rem] uppercase">
+				By the numbers...
+			</h2>
+			<div class="flex flex-wrap justify-evenly mb-8">
+				<div class="w-32">
+					<span class="font-medium text-3xl">
+						175
+					</span>
+					<br />
+					<span class="text-xl">
+						participants
+					</span>
 				</div>
-				<p>
-					A massive thank you to all students and teachers who participated!
-				</p>
-			</section>
-
-			<section class="max-w-7xl mx-auto mt-12">
-				<h1 class="font-semibold text-4xl mb-2 px-4 md:px-8">
-					Designs
-				</h1>
-				<p class="px-4 md:px-8 mt-0 mb-4">
-					Drawings are presented in random order. If a team made multiple designs, you can view them by clicking on the drawing.
-				</p>
-				<DesignGrid />
-			</section>
-		</main>
-
-		<footer class="mt-20 bg-green-50 dark:bg-green-950 px-4 py-8 md:px-8">
-			<p class="text-sm text-green-800 dark:text-green-500">
-				&copy; Rayo Verweij 2025. This research was funded by the UKRI AI Centre for Doctoral Training in Responsible and Trustworthy in-the-world Natural Language Processing (grant ref: EP/Y030656/1).
+				<div class="w-32">
+					<span class="font-medium text-3xl">
+						45
+					</span>
+					<br />
+					<span class="text-xl">
+						teams
+					</span>
+				</div>
+				<div class="w-32">
+					<span class="font-medium text-3xl">
+						92
+					</span>
+					<br />
+					<span class="text-xl">
+						designs
+					</span>
+				</div>
+			</div>
+			<p>
+				A massive thank you to all students and teachers who participated!
 			</p>
-		</footer>
-	</div>
+		</section>
+
+		<section class="max-w-7xl mx-auto mt-12">
+			<h2 class="font-semibold text-4xl mb-2 px-4 md:px-8">
+				Designs
+			</h2>
+			<p class="px-4 md:px-8 mt-0 mb-4">
+				Drawings are presented in random order. If a team made multiple designs, you can view them by clicking on the drawing.
+			</p>
+			<DesignGrid />
+		</section>
+	</main>
+
+	<footer class="mt-20 bg-green-50 dark:bg-green-950 px-4 py-8 md:px-8">
+		<p class="text-sm text-green-800 dark:text-green-500">
+			&copy; Rayo Verweij 2025. This research was funded by the UKRI AI Centre for Doctoral Training in Responsible and Trustworthy in-the-world Natural Language Processing (grant ref: EP/Y030656/1).
+		</p>
+	</footer>
 </BaseLayout>

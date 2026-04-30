@@ -59,6 +59,10 @@
 		@apply bg-black text-white;
 	}
 
+	:focus-visible {
+		@apply outline-2 outline-offset-2 outline-black dark:outline-white;
+	}
+
 	html.dark ::selection {
 		@apply bg-white text-black;
 	}
@@ -82,7 +86,7 @@
 		@apply font-medium;
 	}
 
-	h1 {
+	h1, h2 {
 		@apply font-semibold text-3xl lg:text-4xl uppercase;
 	}
 
@@ -119,5 +123,14 @@
 		@apply mr-4;
 		-webkit-initial-letter: 3;
 		initial-letter: 3;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
 	}
 }
