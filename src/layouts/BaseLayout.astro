@@ -38,7 +38,7 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 		<meta property="og:image" content={imgURL} />
 		<meta property="og:image:alt" content={ogImageAlt} />
 
-		<title>{ title ? `${title} | Rayo Verweeij` : "Rayo Verweij" }</title>
+		<title>{ title ? `${title} | Rayo Verweij` : "Rayo Verweij" }</title>
 
 		<script>
 			document.documentElement.classList.toggle("dark",
@@ -80,10 +80,13 @@ const imgURL = new URL((await getImage({ src: ogImageData, format: ogImageData.f
 				<span class="font-semibold text-3xl text-rock-500 uppercase delay-100">
 					Projects
 				</span>
-				<a href="/inference-interference" class={`ml-4 font-semibold text-lg text-black dark:text-white uppercase decoration-[#DA4627] delay-200 ${url.pathname === "/inference-interference" ? "pointer-events-none" : "no-underline hover:underline"}`}>
+				<a href="/meddl" class={`ml-4 font-semibold text-lg text-black dark:text-white uppercase decoration-purple-700 delay-200 ${url.pathname === "/meddl" ? "pointer-events-none" : "no-underline hover:underline"}`}>
+					MEDDL: Meddling Educational Digital Design Labs
+				</a>
+				<a href="/inference-interference" class={`ml-4 font-semibold text-lg text-black dark:text-white uppercase decoration-[#DA4627] delay-300 ${url.pathname === "/inference-interference" ? "pointer-events-none" : "no-underline hover:underline"}`}>
 					"Inference Interference"
 				</a>
-				<a href="/designing-future-ai-schools" class={`ml-4 font-semibold text-lg text-black dark:text-white uppercase decoration-green-600 delay-300 ${url.pathname === "/designing-future-ai-schools" ? "pointer-events-none" : "no-underline hover:underline"}`}>
+				<a href="/designing-future-ai-schools" class={`ml-4 font-semibold text-lg text-black dark:text-white uppercase decoration-green-600 delay-400 ${url.pathname === "/designing-future-ai-schools" ? "pointer-events-none" : "no-underline hover:underline"}`}>
 					How Children Design the Future of AI for Primary School
 				</a>
 			</nav>

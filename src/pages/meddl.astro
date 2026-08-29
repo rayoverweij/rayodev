@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import A from "@components/A.astro";
+import TimelineSegment from "@components/TimelineSegment.astro";
+import banner from "@assets/meddl_placeholder.png";
+import meddl from "@assets/meddl.svg";
+
+const bannerAlt = "";
+---
+
+<BaseLayout
+	title="MEDDL"
+	desc="Meddling Educational Digital Design Labs are after-school programmes that I am running during the 26/27 school year."
+	ogImageData={banner}
+	ogImageAlt={bannerAlt}
+>
+	<main id="main-content" class="relative w-full max-w-5xl mx-auto pt-24 px-4">
+		<Image
+			src={meddl}
+			alt="MEDDL wordmark in which a mouse pointer is dragging the letter L towards the letters MEDD"
+			class="w-full max-w-xl"
+		/>
+		<div class="font-bold text-3xl uppercase *:mt-0">
+			<p>Meddling</p>
+			<p>Educational</p>
+			<p>Digital</p>
+			<p>Design</p>
+			<p>Lab</p>
+		</div>
+		<div class="hidden md:block absolute right-8 top-36 w-60 h-68 p-3 bg-white dark:bg-black rotate-15 shadow">
+			<Image
+				src={banner}
+				alt="A blurred photograph of Rayo and some high school students looking at something on a computer screen"
+				class="w-54 h-54 object-cover"
+			/>
+			<p class="italic mt-2">Starting soon...</p>
+		</div>
+		<div class="bg-white dark:bg-black border border-b-3 border-r-3 rounded-xl mt-8 p-4 text-lg">
+			<p class="mt-0">
+				...is an <strong>after-school programme</strong> that I am running at two high schools during the 26/27 school year.
+			</p>
+			<p>
+				In a MEDDL, teams of <span class="line-through decoration-wavy">high school students</span> MEDDL researchers ("MEDDLRs") <strong class="text-[#e03e1a]">investigate</strong> emerging technologies, <strong class="text-[#198f51]">prototype</strong> real tools for use at school, and support <strong class="text-[#0887a0]">deployment</strong> and scaling of prototypes that are succesful.
+			</p>
+			<p>
+				In this first year, we are focussing our investigation on <strong class="text-[#68077d] dark:text-purple-400">large language models</strong>.
+			</p>
+			<p>
+				We ask...
+			</p>
+			<ul class="font-emoji *:mb-2">
+				<li class="list-['💡']"><span class="font-sans">What do MEDDLRs <strong class="text-[#e03e1a]">learn</strong> from taking part?</span></li>
+				<li class="list-['⚙️']"><span class="font-sans">What <strong class="text-[#198f51]">technology</strong> are we really able to develop in a MEDDL?</span></li>
+				<li class="list-['🏫']"><span class="font-sans">What <strong class="text-[#0887a0]">impacts</strong> does running a MEDDL have on the rest of the school community?</span></li>
+			</ul>
+		</div>
+
+		<div class="relative max-w-132 mt-12">
+			<h2 class="font-bold text-3xl pb-4">
+				Updates
+			</h2>
+			<TimelineSegment emoji="🔎" date="September 2026" colour="sky">
+				After almost a year of preparation we're finally there... the <strong>MEDDLs are starting</strong> in two local high schools!
+			</TimelineSegment>
+			<TimelineSegment emoji="🎤" date="13 July 2026" colour="indigo">
+				Spoke about my plans for MEDDL at the doctoral consortium of the ACM Innovation and Technology in Computer Science Education conference in Madrid! Read the <A href="https://doi.org/10.1145/3803401.3811953">extended abstract</A>.
+			</TimelineSegment>
+			<TimelineSegment emoji="📢" date="October 2025" colour="red" final>
+				<strong>Recruiting high schools</strong> in/around Edinburgh for research into AI literacy through <strong>&ldquo;AI design clubs&rdquo;</strong> that I will run! <a href="/docs/AIDesignClubCallForParticipants.pdf" target="_blank">See the poster for details.</a>
+			</TimelineSegment>
+		</div>
+
+		<div class="mt-24 mb-8 py-4 border-y border-black dark:border-rock-100">
+			<p class="text-sm text-center mt-0">
+				&copy; Rayo Verweij 2026.<br />
+				This research was funded by the UKRI AI Centre for Doctoral Training in <A href="https://responsiblenlp.org" class="text-[#68077d] dark:text-purple-400">Designing Responsible and Trustworthy in-the-world Natural Language Processing</A> at the University of Edinburgh (grant ref: EP/Y030656/1).
+			</p>
+		</div>
+	</main>
+</BaseLayout>
