@@ -5,19 +5,19 @@ import A from "@components/A.astro";
 import TimelineSegment from "@components/TimelineSegment.astro";
 import banner from "@assets/banner.png";
 import profilepic from "@assets/rayo.jpg";
-import infint from "@assets/infint.png";
+import meddl from "@assets/meddl_placeholder.png";
 import iep from "@assets/iep.webp";
 import sibb from "@assets/sibb.jpg";
 import voxsio_clinicians from "@assets/voxsio_clinicians.jpg";
 
 const highlights = [
 	{
-		src: infint,
-		alt: "An AI-generated image in the style of vintage adventure book covers of two children being sucked into a black box by what looks like a neural net",
-		title: `“INFERENCE INTERFERENCE"`,
-		href: "/inference-interference",
+		src: meddl,
+		alt: "A blurred photograph of Rayo and some high school students looking at something on a computer screen",
+		title: `MEDDLing Educational Digital Design Labs`,
+		href: "/meddl",
 		external: false,
-		style: "font-della tracking-wider text-lg bg-red-200 -rotate-[0.5deg]",
+		style: "bg-purple-200 -rotate-[0.5deg]",
 		rotate: ""
 	},
 	{
@@ -26,7 +26,7 @@ const highlights = [
 		title: "How Children Design the Future of AI in Primary Schools",
 		href: "/designing-future-ai-schools",
 		external: false,
-		style: "bg-yellow-200 -rotate-1"
+		style: "bg-yellow-200 rotate-1"
 	},
 	{
 		src: sibb,
@@ -174,7 +174,7 @@ const interests = [
 					<span class="text-lg font-emoji">📧</span> rayo [dot] verweij [at] ed [dot] ac [dot] uk
 				</p>
 				<p class="mt-2 flex gap-2">
-					<span class="text-lg font-emoji">✒️</span> <a href="#publications">Publications</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<span class="text-lg font-emoji">🎓</span> <a href="#teaching">Teaching</a>
+					<span class="text-lg font-emoji">✒️</span> <a href="#publications">Writing</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<span class="text-lg font-emoji">🎓</span> <a href="#teaching">Teaching</a>
 				</p>
 
 				<div class="relative mt-24 md:mt-32 lg:mt-48 md:ml-4 lg:ml-0">
@@ -184,11 +184,11 @@ const interests = [
 					<p class="md:hidden mt-0 pb-4 italic">
 						Recently...
 					</p>
-					<TimelineSegment emoji="📜" date="17 June 2026" colour="amber">
-						Paper published! <a href="https://dl.acm.org/doi/10.1145/3800645.3812976" target="_blank" rel="noopener noreferrer">Stepping Into the Black Box: Opening Up LLMs to Public Exploration Through Discursive Design</a>, with Sarah Immel and Neel Rajani. Presented together with Sarah at <a href="https://dis.acm.org/2026/" target="_blank" rel="noopener noreferrer">ACM Designing Interactive Systems</a> in Singapore, where we received an Honourable Mention <span class="font-emoji">🥳</span>
+					<TimelineSegment emoji="🔎" date="September 2026" colour="sky">
+						Started the <a href="/meddl">MEDDL</a> project: I will be running weekly after-school design labs in two local high schools for the entire school year!
 					</TimelineSegment>
-					<TimelineSegment emoji="🔎" date="March 2026" colour="sky">
-						Running <strong><em><a href="/inference-interference">&ldquo;INFERENCE INTERFERENCE&rdquo;</a></em></strong>, a series of workshops at youth clubs and schools, demystifying how AI chatbots generate their responses.
+					<TimelineSegment emoji="🎤" date="13 July 2026" colour="indigo">
+						Spoke about my plans for MEDDL at the doctoral consortium of the ACM Innovation and Technology in Computer Science Education conference in Madrid! Read the <A href="https://doi.org/10.1145/3803401.3811953">extended abstract</A>.
 					</TimelineSegment>
 				</div>
 			</div>
@@ -232,7 +232,7 @@ const interests = [
 							class="aspect-square object-cover group-hover:scale-105 transition"
 							pictureAttributes={{ class: "block rounded-lg border-2 group-hover:border-3 border-black dark:border-rock-100 overflow-hidden"}}
 						/>
-						<div class={`absolute w-[105%] p-2 -left-[2.5%] bottom-6 z-10 border group-hover:border-2 shadow-light dark:border-rock-100 rounded group-hover:rotate-0 transition font-medium text-black text-center ${style}`}>
+						<div class={`absolute w-[105%] p-2 left-[-2.5%] bottom-6 z-10 border group-hover:border-2 shadow-light dark:border-rock-100 rounded group-hover:rotate-0 transition font-medium text-black text-center ${style}`}>
 							{ title }
 						</div>
 					</a>
@@ -262,9 +262,15 @@ const interests = [
 			</div>
 
 			<div class="relative max-w-132 md:ml-16 lg:ml-20 xl:ml-40">
-				<div class="absolute h-8 md:h-32 -top-8 md:-top-32 left-6 border-l-3 border-sky-500 border-dashed md:border-solid -z-20" />
+				<div class="absolute h-8 md:h-32 -top-8 md:-top-32 left-6 border-l-3 border-indigo-500 border-dashed md:border-solid -z-20" />
+				<TimelineSegment emoji="📜" date="17 June 2026" colour="amber">
+					Paper published! <a href="https://dl.acm.org/doi/10.1145/3800645.3812976" target="_blank" rel="noopener noreferrer">Stepping Into the Black Box: Opening Up LLMs to Public Exploration Through Discursive Design</a>, with Sarah Immel and Neel Rajani. Presented together with Sarah at <a href="https://dis.acm.org/2026/" target="_blank" rel="noopener noreferrer">ACM Designing Interactive Systems</a> in Singapore, where we received an Honourable Mention <span class="font-emoji">🥳</span>
+				</TimelineSegment>
+				<TimelineSegment emoji="🔎" date="March 2026" colour="sky">
+					Running <strong><em><a href="/inference-interference">&ldquo;INFERENCE INTERFERENCE&rdquo;</a></em></strong>, a series of workshops at youth clubs and schools, demystifying how AI chatbots generate their responses.
+				</TimelineSegment>
 				<TimelineSegment emoji="📢" date="October 2025" colour="red">
-					<strong>Recruiting high schools</strong> in/around Edinburgh for research into AI literacy through <strong>&ldquo;AI design clubs&rdquo;</strong> that I will run! <a href="/docs/AIDesignClubCallForParticipants.pdf" target="_blank" rel="noopener noreferrer">See the poster for details.</a>
+					<strong>Recruiting high schools</strong> in/around Edinburgh for research into AI literacy through <strong>&ldquo;AI design clubs&rdquo;</strong> that I will run! <a href="/docs/AIDesignClubCallForParticipants.pdf" target="_blank">See the poster for details.</a>
 				</TimelineSegment>
 				<TimelineSegment emoji="🎤" date="23 June 2025" colour="indigo">
 					Spoke at the doctoral consortium of the ACM Interaction Design and Children conference in Reykjavík, Iceland! Read the <A href="https://dl.acm.org/doi/full/10.1145/3713043.3731605">extended abstract</A>.
